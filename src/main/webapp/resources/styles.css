@@ -1,0 +1,188 @@
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: black;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: black;
+    opacity: 1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: black;
+    opacity: 1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: black;
+}
+body {
+    margin: 0;
+    padding: 0;
+    foverflow: hidden; /* hack to hide scrollbar with height = 100vh */
+    font-family: Arial;
+}
+
+.content-container {
+    background-color: #424242;
+    padding: 20px 8px;
+    min-height: 100vh;
+}
+
+.top-panel {
+    font-size: 12px;
+}
+
+.main-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0; /* hack to remove space between li items */
+}
+
+.main-menu li {
+    font-size: 12px; /* second part of the last hack :) */
+    display: inline-block;
+    background-color: white;
+    padding: 5px 15px;
+    border: 1px solid black;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+}
+
+.main-menu li a {
+    color: black;
+    text-decoration: none;
+}
+
+.main-menu li a:visited {
+    color: black;
+}
+
+.main-menu li a:hover {
+    color: black;
+}
+
+.main-menu li a:active {
+    color: black;
+}
+
+.search-panel {
+    background-color: #e0e0e0;
+    padding: 30px 15px;
+    border: 1px solid black;
+    border-top-color: #808080;
+}
+
+.search-form {
+    text-align: justify;
+}
+
+.search-form:after {
+    content: "";
+    width: 100%;
+    display: inline-block;
+}
+
+.search-form > * {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.search-form input, .search-form select {
+    background-color: white;
+    height: 30px;
+    border: 1px solid black;
+    padding-left: 5px;
+    padding-right: 8px;
+}
+
+.search-form select {
+    background: url(select-arrow.png) no-repeat right white;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.search-form option {
+    height: 30px;
+}
+
+.street-field {
+    width: 25%;
+    border-radius: 30px;
+}
+
+.rooms-num-field, .type-field, .price-field {
+    width: 18%;
+    border-radius: 10px;
+}
+
+.search-button {
+    border: 1px solid #757575;
+    border-radius: 10px;
+    background-color: #8bc34a;
+    color: white;
+    font-size: 22px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.search-results-summary {
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    margin: 15px 0;
+}
+
+.search-results {
+    margin-top: 15px;
+}
+
+.data-table {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 18px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.data-table tr {
+    height: 70px;
+}
+
+.data-table td, .data-table th {
+    border: 1px solid black;
+}
+
+.data-table th {
+    background-color: #757575;
+    color: white;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: #e6e6e6; 
+}
+
+.data-table tr:nth-child(odd) {
+    background-color: white;
+}
+
+.double-headers-table td:first-child {
+    font-weight: bold;
+}
+
+.content-block {
+    padding: 40px 22%;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.content-block:last-of-type {
+    border: none;
+}
+
+.content-block h1 {
+    color: white;
+    text-align: center;
+    font-size: 22px;
+    margin: 0 0 15px 0;
+}
+
+.narrow-rows-table tr {
+    height: 20px !important;
+}
