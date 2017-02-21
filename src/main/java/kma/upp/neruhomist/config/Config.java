@@ -31,6 +31,11 @@ public class Config extends WebMvcConfigurerAdapter {
     @Value("${jdbc.password}")
     private String password;
 
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/**").addResourceLocations("/resources/");
+    }
+
     @Bean
     public ViewResolver getViewResolver() {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();

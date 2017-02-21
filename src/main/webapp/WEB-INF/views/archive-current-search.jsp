@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix ="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <title>Archive</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="styles.css">
@@ -5,84 +7,57 @@
     <div class="top-panel">
         <nav class="main-menu">
             <ul>
-                <li><a href="#">Пошук приміщення</a></li>
-                <li><a href="#">Статистика</a></li>
-                <li><a href="#">Поточні оренди</a></li>
+                <li><a href="/search">Пошук приміщення</a></li>
+                <li><a href="/statistics">Статистика</a></li>
+                <li><a href="/current">Поточні оренди</a></li>
             </ul>
         </nav>
         <div class="search-panel">
-            <form class="search-form">
-                <input class="street-field" placeholder="Вулиця"/>
-                <select class="rooms-num-field">
+            <form class="search-form" method="post" action="/search">
+                <input class="street-field" name="street" placeholder="Вулиця" required/>
+                <select class="rooms-num-field" name="roomsNum" required>
                     <option disabled selected hidden>К-ть кімнат</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
+                    <c:forEach items="${roomsNums}" var="roomsNum">
+                        <option>${roomsNum}</option>
+                    </c:forEach>
                 </select>
-                <select class="type-field">
+                <select class="type-field" name="type" required>
                     <option disabled selected hidden>Тип</option>
-                    <option>Тип 1</option>
-                    <option>Тип 2</option>
-                    <option>Тип 3</option>
+                    <c:forEach items="${types}" var="type">
+                        <option>${type}</option>
+                    </c:forEach>
                 </select>
-                <select class="price-field">
+                <select class="price-field" name="priceRange" required>
                     <option disabled selected hidden>Ціна</option>
-                    <option>$1000 - $2000</option>
-                    <option>$2000 - $3000</option>
-                    <option>$3000 - $5000</option>
+                    <c:forEach items="${prices}" var="price">
+                        <option>${price}</option>
+                    </c:forEach>
                 </select>
                 <button class="search-button">Знайти</button>
             </form>
         </div>
     </div>
-    <div class="search-results-summary">Знайдено 22547 записів про оренд</div>
+    <div class="search-results-summary">Знайдено ${objects.size()} записів про оренд</div>
     <div class="search-results">
         <table class="data-table">
             <tr>
                 <th>№</th>
-                <th>Вулиця</th>
-                <th>Будинок</th>
+                <th>Адреса</th>
                 <th>Кімнат</th>
                 <th>Тип</th>
                 <th>Ціна</th>
                 <th>Тривалість оренди</th>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>Бальзака О. де</td>
-                <td>32</td>
-                <td>3</td>
-                <td>житловий</td>
-                <td>15 000</td>
-                <td>7 міс</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Маяковського В.</td>
-                <td>58a</td>
-                <td>3</td>
-                <td>нежитловий</td>
-                <td>9 000</td>
-                <td>2 роки і 1 міс</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Сковороди Г.</td>
-                <td>5</td>
-                <td>2</td>
-                <td>нежитловий</td>
-                <td>8 000</td>
-                <td>3 міс</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Цвєтаєвої М.</td>
-                <td>14Б</td>
-                <td>1</td>
-                <td>житловий</td>
-                <td>3 000</td>
-                <td>5 міс</td>
-            </tr>
+            <c:forEach items="${objects}" var="object" varStatus="loop">
+                <tr>
+                    <td>${loop.index}</td>
+                    <td>${object.address}</td>
+                    <td>${object.roomsNum}</td>
+                    <td>${object.type}</td>
+                    <td>${object.price}</td>
+                    <td>${object.daysInRent} днів</td>
+                </tr>
+            </c:forEach>
         </table>
     </div>
 </div>

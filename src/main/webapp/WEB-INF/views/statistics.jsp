@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <title>Statistics</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="styles.css">
@@ -5,9 +6,9 @@
     <div class="top-panel">
         <nav class="main-menu">
             <ul>
-                <li><a href="#">Пошук приміщення</a></li>
-                <li><a href="#">Статистика</a></li>
-                <li><a href="#">Поточні оренди</a></li>
+                <li><a href="/search">Пошук приміщення</a></li>
+                <li><a href="/statistics">Статистика</a></li>
+                <li><a href="/current">Поточні оренди</a></li>
             </ul>
         </nav>
         <div class="search-panel">
