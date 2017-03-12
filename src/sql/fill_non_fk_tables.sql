@@ -3,7 +3,6 @@ call populate('rent','clients',1000);
 call populate('rent','workers',1000);
 call populate('rent','owners',100);
 
-
 DELIMITER $$
 
 DROP PROCEDURE IF EXISTS populate $$
@@ -45,6 +44,7 @@ FETCH cur_datatype INTO col_name, col_type, col_datatype, col_maxlen, col_extra,
 CASE 
 WHEN col_extra='auto_increment' THEN SET func_query=concat(func_query,'NULL, ');
 WHEN col_datatype in ('int','bigint') THEN SET func_query=concat(func_query,'get_int(), ');
+WHEN col_datatype in ('bool', 'boolean') THEN SET func_query=concat(func_query,'get_bool(), ');
 WHEN col_datatype in ('varchar','char') THEN SET func_query=concat(func_query,'get_string(',ifnull(col_maxlen,0),'), ');
 WHEN col_datatype in ('tinyint', 'smallint','year') or col_datatype='mediumint' THEN SET func_query=concat(func_query,'get_tinyint(), ');
 WHEN col_datatype in ('datetime','timestamp') THEN SET func_query=concat(func_query,'get_datetime(), ');
@@ -112,6 +112,14 @@ CREATE FUNCTION get_float(in_precision int, in_scale int) RETURNS VARCHAR(100) D
 $$
 DELIMITER ;
 
+## MySQL function to generate random float value from specified precision and scale.
+DELIMITER $$
+DROP FUNCTION IF EXISTS get_bool $$
+CREATE FUNCTION get_bool(in_precision int, in_scale int) RETURNS boolean DETERMINISTIC
+	RETURN true 
+$$
+DELIMITER ;
+
 
 
 ## MySQL function to generate random date (of year 2012).
@@ -143,7 +151,7 @@ DELIMITER ;
 DELIMITER $$
 DROP FUNCTION IF EXISTS get_tinyint $$
 CREATE FUNCTION get_tinyint() RETURNS INTEGER DETERMINISTIC
-	RETURN floor(rand()*100) 
+	RETURN floor(rand()*10) 
 $$
 DELIMITER ;
 

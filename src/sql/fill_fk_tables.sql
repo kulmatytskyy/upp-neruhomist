@@ -9,7 +9,7 @@
 DELIMITER $$
 
 DROP PROCEDURE IF EXISTS populate_fk $$
-CREATE PROCEDURE populate_fk(in_db varchar(20), in_table varchar(20), in_rows int) 
+CREATE PROCEDURE populate_fk(in_db varchar(25), in_table varchar(25), in_rows int) 
 fk_load:BEGIN
 
 select CONCAT("UPDATE ",TABLE_NAME," SET ",COLUMN_NAME,"=(SELECT ",REFERENCED_COLUMN_NAME," FROM ",REFERENCED_TABLE_SCHEMA,".",REFERENCED_TABLE_NAME," ORDER BY RAND() LIMIT 1);") into @query from information_schema.key_column_usage where TABLE_NAME=in_table AND TABLE_SCHEMA=in_db LIMIT 1 OFFSET 2 ;
