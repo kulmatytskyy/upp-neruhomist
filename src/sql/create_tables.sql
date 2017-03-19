@@ -60,7 +60,7 @@ REFERENCES propertytypes(propName)
 ON DELETE CASCADE
 ON UPDATE CASCADE,
 
-workerID int,
+workerID int NOT NULL,
 FOREIGN KEY fk_workers(workerID)
 REFERENCES workers(workerID)
 ON DELETE RESTRICT
@@ -175,65 +175,3 @@ BEGIN
     END IF;
 END$$   
 DELIMITER ;  
-
-DELIMITER $$
-CREATE TRIGGER `insert_inspections_date` BEFORE INSERT ON `inspections`
-FOR EACH ROW
-BEGIN
-	select rentedNow into @rented from objects where objectID = NEW.objectID;
-    IF @rented = false THEN
-        SIGNAL SQLSTATE '12345'
-            SET MESSAGE_TEXT = 'check constraint on inspections.date failed';
-    END IF;
-END$$   
-DELIMITER ;  
-
-DELIMITER $$
-CREATE TRIGGER `update_inspections_date` BEFORE UPDATE ON `inspections`
-FOR EACH ROW
-BEGIN
-    select rentedNow into @rented from objects where objectID = NEW.objectID;
-    IF @rented = false THEN
-        SIGNAL SQLSTATE '12345'
-            SET MESSAGE_TEXT = 'check constraint on inspections.date failed';
-    END IF;
-END$$   
-DELIMITER ;  
-
-DELIMITER $$
-CREATE TRIGGER `insert_reviews_date` BEFORE INSERT ON `reviews`
-FOR EACH ROW
-BEGIN
-	select rentedNow into @rented from objects where objectID = NEW.objectID;
-    IF @rented = true THEN
-        SIGNAL SQLSTATE '12345'
-            SET MESSAGE_TEXT = 'check constraint on inspections.date failed';
-    END IF;
-END$$   
-DELIMITER ;  
-
-DELIMITER $$
-CREATE TRIGGER `update_rewiews_date` BEFORE UPDATE ON `reviews`
-FOR EACH ROW
-BEGIN
-    select rentedNow into @rented from objects where objectID = NEW.objectID;
-    IF @rented = true THEN
-        SIGNAL SQLSTATE '12345'
-            SET MESSAGE_TEXT = 'check constraint on inspections.date failed';
-    END IF;
-END$$   
-DELIMITER ;  
-
-
-
-INSERT INTO rent.workers VALUES (1, "name", "phone", "position");
-INSERT INTO rent.clients VALUES (1, "name", "phone", "type", 250);
-INSERT INTO rent.owners VALUES (1, "name", "phone", false, null, null);
-INSERT INTO rent.objects VALUES (1, "name", 5, 150, false, 1, "living", 1);
-INSERT INTO rent.objects VALUES (2, "address", 5, 150, true, 1, "living", 1);
-
-INSERT INTO rent.inspections VALUES (1, "address", '2012.04.20', 1, 2);
-INSERT INTO rent.inspections VALUES (2, "address", '2012.04.20', 1, 1);
-
-INSERT INTO rent.reviews VALUES (1, "comment", '2012.04.20', 1, 2);
-INSERT INTO rent.reviews VALUES (2, "comment", '2012.04.20', 1, 1);
