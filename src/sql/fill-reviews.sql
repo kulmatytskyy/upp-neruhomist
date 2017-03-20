@@ -1,5 +1,5 @@
-INSERT INTO rent.reviews (comment, date, objectID, clientID) VALUES("man my the automatically a constantly the ahmqeczllqxcgq it man hold I", DATE'2012-12-04', 0, 231);
-INSERT INTO rent.reviews (comment, date, objectID, clientID) VALUES("visions others secretly sidekick library of trying assert island in it", DATE'2015-04-12', 0, 410);
+--INSERT INTO rent.reviews (comment, date, objectID, clientID) VALUES("man my the automatically a constantly the ahmqeczllqxcgq it man hold I", DATE'2012-12-04', 0, 231);
+--INSERT INTO rent.reviews (comment, date, objectID, clientID) VALUES("visions others secretly sidekick library of trying assert island in it", DATE'2015-04-12', 0, 410);
 INSERT INTO rent.reviews (comment, date, objectID, clientID) VALUES("on the sacrifice as light enter a banging to zyhghjcugeyd sacrifice do", DATE'2014-03-04', 1, 626);
 INSERT INTO rent.reviews (comment, date, objectID, clientID) VALUES("light end island we came or a discovered I hid to visions discovered I", DATE'2012-09-04', 2, 63);
 INSERT INTO rent.reviews (comment, date, objectID, clientID) VALUES("window automatically hid came generated monster assert visions room to", DATE'2010-08-19', 2, 591);
