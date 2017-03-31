@@ -1,5 +1,9 @@
+package kma.upp.neruhomist.sqlgeneration;
+
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.*;
+import java.lang.Object;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,8 +11,11 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-import main.java.org.fluttercode.datafactory.impl.*;
+import kma.upp.neruhomist.sqlgeneration.model.*;
+import org.fluttercode.datafactory.impl.*;
+
 public class Main {
+
 	private static Random randomGenerator;
 	static DataFactory df = new DataFactory();
 	static List<Worker> workerList = new ArrayList<Worker>();
@@ -17,7 +24,7 @@ public class Main {
 	static List<Review> reviewList = new ArrayList<Review>();
 	static List<Client> clientList = new ArrayList<Client>();
 	static List<Contract> contractList = new ArrayList<Contract>();
-	static List<Object> objectList = new ArrayList<Object>();
+	static List<java.lang.Object> objectList = new ArrayList<java.lang.Object>();
 	static long minDay = LocalDate.of(2010, 1, 1).toEpochDay();
     static long maxDay = LocalDate.of(2019, 12, 31).toEpochDay();
     static long today = LocalDate.of(2017, 3, 17).toEpochDay();
@@ -56,17 +63,17 @@ public class Main {
 			boolean goAhead = true;
 			for(int n = 0; n < contractList.size(); n++){
 				Contract contract = contractList.get(n);
-				if(contract.objectID==i&&contract.startDate.toEpochDay()<=randomDay&&contract.endDate.toEpochDay()>=randomDay){
+				if(contract.getObjectID() ==i&&contract.getStartDate().toEpochDay()<=randomDay&&contract.getEndDate().toEpochDay()>=randomDay){
 					goAhead = false;
 				}
 			}
 			if(goAhead){
 				LocalDate date = LocalDate.ofEpochDay(randomDay);
 				Review review = new Review();
-				review.date = date;
-				review.objectID = i;
-				review.comment = df.getRandomText(70);
-				review.clientID = df.getNumberBetween(1, clientList.size());
+				review.setDate(date);
+				review.setObjectID(i);
+				review.setComment(df.getRandomText(70));
+				review.setClientID(df.getNumberBetween(1, clientList.size()));
 				//System.out.println(review);
 				writer.println(review);
 				reviewList.add(review);
@@ -81,20 +88,20 @@ public class Main {
 		
 		int inspectionsPerContract = df.getNumberBetween(1, 5);
 		Contract contract = contractList.get(i);
-		int objectID = contract.objectID;
+		int objectID = contract.getObjectID();
 		for(int n = 0; n < inspectionsPerContract; n++){
-			long min = contract.startDate.toEpochDay();
-			long max = contract.endDate.toEpochDay();
+			long min = contract.getStartDate().toEpochDay();
+			long max = contract.getEndDate().toEpochDay();
 			long randomDay = ThreadLocalRandom.current().nextLong(min, max);
 			LocalDate date = LocalDate.ofEpochDay(randomDay);
 			int workerID = df.getNumberBetween(1, workerList.size());
 			String comment = df.getRandomText(70);
 			Inspection inspection = new Inspection();
 			
-			inspection.workerID = workerID;
-			inspection.date = date;
-			inspection.comment = comment;
-			inspection.objectID = objectID;
+			inspection.setWorkerID(workerID);
+			inspection.setDate(date);
+			inspection.setComment(comment);
+			inspection.setObjectID(objectID);
 			inspectionList.add(inspection);
 			//System.out.println(inspection);
 			writer.println(inspection);
@@ -111,8 +118,8 @@ public class Main {
 			if(contractList.size()!=0){
 				for(int n = 0; n<contractList.size(); n++){
 					Contract contr = contractList.get(n);
-					if(contr.objectID == objectID){
-						minDate = contr.endDate.toEpochDay();
+					if(contr.getObjectID() == objectID){
+						minDate = contr.getEndDate().toEpochDay();
 					}
 				}
 			}
@@ -122,19 +129,19 @@ public class Main {
 			LocalDate startDate = LocalDate.ofEpochDay(randomStartDay);
 			LocalDate endDate = LocalDate.ofEpochDay(randomEndDay);
 			
-			Object object = objectList.get(objectID);
+			kma.upp.neruhomist.sqlgeneration.model.Object object = (kma.upp.neruhomist.sqlgeneration.model.Object) objectList.get(objectID);
 			if(randomEndDay>today){
-				object.rentedNow = true;
+				object.setRentedNow(true);
 			}
-			double payment = object.payment;
+			double payment = object.getPayment();
 			int clientID = df.getNumberBetween(1, clientList.size());
 			int workerID = df.getNumberBetween(1, workerList.size());
-			contract.monthlyPayment = payment;
-			contract.clientID = clientID;
-			contract.workerID = workerID;
-			contract.objectID = objectID;
-			contract.startDate = startDate;
-			contract.endDate = endDate;
+			contract.setMonthlyPayment(payment);
+			contract.setClientID(clientID);
+			contract.setWorkerID(workerID);
+			contract.setObjectID(objectID);
+			contract.setStartDate(startDate);
+			contract.setEndDate(endDate);
 			//System.out.println(contract);
 			writer.println(contract);
 			contractList.add(contract);
@@ -146,7 +153,7 @@ public class Main {
 	private static void generateObjects() throws IOException {
 		//PrintWriter writer = new PrintWriter("fill-objects.sql", "UTF-8");
 		for (int i = 0; i < 1000; i++) {
-			Object object = new Object();
+			kma.upp.neruhomist.sqlgeneration.model.Object object = new kma.upp.neruhomist.sqlgeneration.model.Object() ;
 			String address = df.getAddress();
 			int rooms = randomGenerator.nextInt(9)+1;
 			boolean rentedNow = false;
@@ -162,13 +169,13 @@ public class Main {
 			int workerID = df.getNumberBetween(1, workerList.size());
 			int ownerID = df.getNumberBetween(1, ownerList.size());
 			
-			object.address = address;
-			object.rooms = rooms;
-			object.rentedNow = rentedNow;
-			object.payment = payment;
-			object.propName = propName;
-			object.workerID = workerID;
-			object.ownerID = ownerID;
+			object.setAddress(address);
+			object.setRooms(rooms);
+			object.setRentedNow(rentedNow);
+			object.setPayment(payment);
+			object.setPropName(propName);
+			object.setWorkerID(workerID);
+			object.setOwnerID(ownerID);
 			objectList.add(object);
 			//writer.println(object);
 		}
@@ -189,17 +196,17 @@ public class Main {
 				int index = randomGenerator.nextInt
 	            		(businessTypeList.size());
 	            business_type = businessTypeList.get(index);
-	            owner.contact_name = contact_name;
-	            owner.business_type = business_type;
+	            owner.setContact_name(contact_name);
+	            owner.setBusiness_type(business_type);
 	            
 	            
 			}
 			else{
 				name = df.getLastName();
 			}
-			owner.name = name;
-			owner.legal_owner = legal_owner;
-			owner.phone = phone;
+			owner.setName(name);
+			owner.setLegal_owner(legal_owner);
+			owner.setPhone(phone);
             ownerList.add(owner);
             //System.out.println(owner);
             writer.println(owner);
@@ -216,10 +223,10 @@ public class Main {
             String phone = df.getNumberText(12);
             double max = df.getNumberBetween(3000, 50000);
             Client client = new Client();
-            client.surname = name;
-            client.type = type;
-            client.phone = phone;
-            client.maxPayment = max;
+            client.setSurname(name);
+            client.setType(type);
+            client.setPhone(phone);
+            client.setMaxPayment(max);
             //System.out.println(client);
             writer.println(client);
             clientList.add(client);
@@ -235,9 +242,9 @@ public class Main {
             String position = positionList.get(index);
             String phone = df.getNumberText(12);
             Worker worker = new Worker();
-            worker.surname = name;
-            worker.position = position;
-            worker.phone = phone;
+            worker.setSurname(name);
+            worker.setPosition(position);
+            worker.setPhone(phone);
            // System.out.println(worker);
             writer.println(worker);
             workerList.add(worker);

@@ -14,6 +14,7 @@
         <spring-version>4.3.7.RELEASE</spring-version>
         <commons-dbcp-version>2.1.1</commons-dbcp-version>
         <mysql-connector-version>6.0.6</mysql-connector-version>
+        <datafactory-version>0.8</datafactory-version>
     </properties>
 
     <build>
@@ -45,6 +46,11 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql-connector-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.fluttercode.datafactory</groupId>
+            <artifactId>datafactory</artifactId>
+            <version>${datafactory-version}</version>
         </dependency>
     </dependencies>
 
