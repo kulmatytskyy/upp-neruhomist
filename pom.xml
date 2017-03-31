@@ -7,20 +7,13 @@
     <groupId>kma.upp</groupId>
     <artifactId>neruhomist</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
 
     <properties>
-        <maven-compiler-plugin-version>3.5.1</maven-compiler-plugin-version>
-        <java-version>1.7</java-version>
-        <maven-war-plugin-version>3.0.0</maven-war-plugin-version>
-        <maven-dependency-plugin-version>2.3</maven-dependency-plugin-version>
-        <webapp-runner-version>8.0.33.0</webapp-runner-version>
-        <spring-version>4.3.0.RELEASE</spring-version>
-        <javax-version>3.1.0</javax-version>
-        <commons-dbcp-version>1.2.2</commons-dbcp-version>
-        <mysql-connector-version>5.1.38</mysql-connector-version>
-        <jsp-api-version>2.3.1</jsp-api-version>
-        <jstl-version>1.2</jstl-version>
+        <maven-compiler-plugin-version>3.6.1</maven-compiler-plugin-version>
+        <java-version>1.8</java-version>
+        <spring-version>4.3.7.RELEASE</spring-version>
+        <commons-dbcp-version>2.1.1</commons-dbcp-version>
+        <mysql-connector-version>6.0.6</mysql-connector-version>
     </properties>
 
     <build>
@@ -30,38 +23,9 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin-version}</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${java-version}</source>
+                    <target>${java-version}</target>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>${maven-war-plugin-version}</version>
-                <configuration>
-                    <failOnMissingWebXml>false</failOnMissingWebXml>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>${maven-dependency-plugin-version}</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals><goal>copy</goal></goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>com.github.jsimone</groupId>
-                                    <artifactId>webapp-runner</artifactId>
-                                    <version>${webapp-runner-version}</version>
-                                    <destFileName>webapp-runner.jar</destFileName>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
@@ -69,38 +33,18 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
+            <artifactId>spring-context</artifactId>
             <version>${spring-version}</version>
         </dependency>
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>${javax-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-            <version>${spring-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-dbcp</groupId>
-            <artifactId>commons-dbcp</artifactId>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-dbcp2</artifactId>
             <version>${commons-dbcp-version}</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql-connector-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet.jsp</groupId>
-            <artifactId>javax.servlet.jsp-api</artifactId>
-            <version>${jsp-api-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-            <version>${jstl-version}</version>
         </dependency>
     </dependencies>
 
