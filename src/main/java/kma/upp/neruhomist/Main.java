@@ -1,9 +1,7 @@
 package kma.upp.neruhomist;
 
 import kma.upp.neruhomist.config.Config;
-import kma.upp.neruhomist.repository.ClientRepository;
 import kma.upp.neruhomist.repository.ContractRepository;
-import kma.upp.neruhomist.repository.impl.ClientJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

@@ -11,9 +11,9 @@ import javax.transaction.Transactional;
 
 @Repository
 @Transactional
-public class ClientJpaRepository extends SimpleJpaRepository<Client, Integer> implements ClientRepository {
+public class JpaClientRepositoryImpl extends SimpleJpaRepository<Client, Integer> implements ClientRepository {
 
-    public ClientJpaRepository(@Autowired  EntityManager em) {
+    public JpaClientRepositoryImpl(@Autowired  EntityManager em) {
         super(Client.class, em);
     }
 
