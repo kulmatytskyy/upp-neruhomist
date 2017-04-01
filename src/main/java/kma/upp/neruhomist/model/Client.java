@@ -4,15 +4,16 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Collection;
 
-@Entity
-public class Clients {
+@Entity(name = "clients")
+public class Client {
+
     private Integer clientId;
     private String surname;
     private String phone;
     private String type;
     private BigDecimal maximumPayment;
-    private Collection<Contracts> contractsByClientId;
-    private Collection<Reviews> reviewsByClientId;
+    private Collection<Contract> contracts;
+    private Collection<Review> reviews;
 
     @Id
     @Column(name = "clientID")
@@ -65,17 +66,17 @@ public class Clients {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(java.lang.Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Clients clients = (Clients) o;
+        Client client = (Client) o;
 
-        if (clientId != null ? !clientId.equals(clients.clientId) : clients.clientId != null) return false;
-        if (surname != null ? !surname.equals(clients.surname) : clients.surname != null) return false;
-        if (phone != null ? !phone.equals(clients.phone) : clients.phone != null) return false;
-        if (type != null ? !type.equals(clients.type) : clients.type != null) return false;
-        if (maximumPayment != null ? !maximumPayment.equals(clients.maximumPayment) : clients.maximumPayment != null)
+        if (clientId != null ? !clientId.equals(client.clientId) : client.clientId != null) return false;
+        if (surname != null ? !surname.equals(client.surname) : client.surname != null) return false;
+        if (phone != null ? !phone.equals(client.phone) : client.phone != null) return false;
+        if (type != null ? !type.equals(client.type) : client.type != null) return false;
+        if (maximumPayment != null ? !maximumPayment.equals(client.maximumPayment) : client.maximumPayment != null)
             return false;
 
         return true;
@@ -91,21 +92,21 @@ public class Clients {
         return result;
     }
 
-    @OneToMany(mappedBy = "clientsByClientId")
-    public Collection<Contracts> getContractsByClientId() {
-        return contractsByClientId;
+    @OneToMany(mappedBy = "client")
+    public Collection<Contract> getContracts() {
+        return contracts;
     }
 
-    public void setContractsByClientId(Collection<Contracts> contractsByClientId) {
-        this.contractsByClientId = contractsByClientId;
+    public void setContracts(Collection<Contract> contractByClientId) {
+        this.contracts = contractByClientId;
     }
 
-    @OneToMany(mappedBy = "clientsByClientId")
-    public Collection<Reviews> getReviewsByClientId() {
-        return reviewsByClientId;
+    @OneToMany(mappedBy = "clients")
+    public Collection<Review> getReviews() {
+        return reviews;
     }
 
-    public void setReviewsByClientId(Collection<Reviews> reviewsByClientId) {
-        this.reviewsByClientId = reviewsByClientId;
+    public void setReviews(Collection<Review> reviewByClientId) {
+        this.reviews = reviewByClientId;
     }
 }

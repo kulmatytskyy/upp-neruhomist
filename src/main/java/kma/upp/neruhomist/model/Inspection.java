@@ -3,15 +3,16 @@ package kma.upp.neruhomist.model;
 import javax.persistence.*;
 import java.sql.Date;
 
-@Entity
-public class Inspections {
+@Entity(name = "inspections")
+public class Inspection {
+
     private Integer inspectionId;
     private String comment;
     private Date date;
     private Integer workerId;
     private Integer objectId;
-    private Workers workersByWorkerId;
-    private Objects objectsByObjectId;
+    private Worker worker;
+    private Object object;
 
     @Id
     @Column(name = "inspectionID")
@@ -64,11 +65,11 @@ public class Inspections {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(java.lang.Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Inspections that = (Inspections) o;
+        Inspection that = (Inspection) o;
 
         if (inspectionId != null ? !inspectionId.equals(that.inspectionId) : that.inspectionId != null) return false;
         if (comment != null ? !comment.equals(that.comment) : that.comment != null) return false;
@@ -91,21 +92,21 @@ public class Inspections {
 
     @ManyToOne
     @JoinColumn(name = "workerID", referencedColumnName = "workerID", nullable = false)
-    public Workers getWorkersByWorkerId() {
-        return workersByWorkerId;
+    public Worker getWorker() {
+        return worker;
     }
 
-    public void setWorkersByWorkerId(Workers workersByWorkerId) {
-        this.workersByWorkerId = workersByWorkerId;
+    public void setWorker(Worker workerByWorkerId) {
+        this.worker = workerByWorkerId;
     }
 
     @ManyToOne
     @JoinColumn(name = "objectID", referencedColumnName = "objectID", nullable = false)
-    public Objects getObjectsByObjectId() {
-        return objectsByObjectId;
+    public Object getObject() {
+        return object;
     }
 
-    public void setObjectsByObjectId(Objects objectsByObjectId) {
-        this.objectsByObjectId = objectsByObjectId;
+    public void setObject(Object objectByObjectId) {
+        this.object = objectByObjectId;
     }
 }

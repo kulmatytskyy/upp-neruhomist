@@ -3,15 +3,16 @@ package kma.upp.neruhomist.model;
 import javax.persistence.*;
 import java.util.Collection;
 
-@Entity
-public class Owners {
+@Entity(name = "owners")
+public class Owner {
+
     private Integer ownerId;
     private String phone;
     private String name;
     private Byte legalOwner;
     private String contactName;
     private String businessType;
-    private Collection<Objects> objectsByOwnerId;
+    private Collection<Object> objects;
 
     @Id
     @Column(name = "ownerID")
@@ -74,18 +75,18 @@ public class Owners {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(java.lang.Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Owners owners = (Owners) o;
+        Owner owner = (Owner) o;
 
-        if (ownerId != null ? !ownerId.equals(owners.ownerId) : owners.ownerId != null) return false;
-        if (phone != null ? !phone.equals(owners.phone) : owners.phone != null) return false;
-        if (name != null ? !name.equals(owners.name) : owners.name != null) return false;
-        if (legalOwner != null ? !legalOwner.equals(owners.legalOwner) : owners.legalOwner != null) return false;
-        if (contactName != null ? !contactName.equals(owners.contactName) : owners.contactName != null) return false;
-        if (businessType != null ? !businessType.equals(owners.businessType) : owners.businessType != null)
+        if (ownerId != null ? !ownerId.equals(owner.ownerId) : owner.ownerId != null) return false;
+        if (phone != null ? !phone.equals(owner.phone) : owner.phone != null) return false;
+        if (name != null ? !name.equals(owner.name) : owner.name != null) return false;
+        if (legalOwner != null ? !legalOwner.equals(owner.legalOwner) : owner.legalOwner != null) return false;
+        if (contactName != null ? !contactName.equals(owner.contactName) : owner.contactName != null) return false;
+        if (businessType != null ? !businessType.equals(owner.businessType) : owner.businessType != null)
             return false;
 
         return true;
@@ -102,12 +103,12 @@ public class Owners {
         return result;
     }
 
-    @OneToMany(mappedBy = "ownersByOwnerId")
-    public Collection<Objects> getObjectsByOwnerId() {
-        return objectsByOwnerId;
+    @OneToMany(mappedBy = "owner")
+    public Collection<Object> getObjects() {
+        return objects;
     }
 
-    public void setObjectsByOwnerId(Collection<Objects> objectsByOwnerId) {
-        this.objectsByOwnerId = objectsByOwnerId;
+    public void setObjects(Collection<Object> objectByOwnerId) {
+        this.objects = objectByOwnerId;
     }
 }

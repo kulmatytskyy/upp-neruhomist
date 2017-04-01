@@ -3,15 +3,16 @@ package kma.upp.neruhomist.model;
 import javax.persistence.*;
 import java.sql.Date;
 
-@Entity
-public class Reviews {
+@Entity(name = "reviews")
+public class Review {
+
     private Integer reviewId;
     private String comment;
     private Date date;
     private Integer clientId;
     private Integer objectId;
-    private Clients clientsByClientId;
-    private Objects objectsByObjectId;
+    private Client clients;
+    private Object objects;
 
     @Id
     @Column(name = "reviewID")
@@ -64,17 +65,17 @@ public class Reviews {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(java.lang.Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Reviews reviews = (Reviews) o;
+        Review review = (Review) o;
 
-        if (reviewId != null ? !reviewId.equals(reviews.reviewId) : reviews.reviewId != null) return false;
-        if (comment != null ? !comment.equals(reviews.comment) : reviews.comment != null) return false;
-        if (date != null ? !date.equals(reviews.date) : reviews.date != null) return false;
-        if (clientId != null ? !clientId.equals(reviews.clientId) : reviews.clientId != null) return false;
-        if (objectId != null ? !objectId.equals(reviews.objectId) : reviews.objectId != null) return false;
+        if (reviewId != null ? !reviewId.equals(review.reviewId) : review.reviewId != null) return false;
+        if (comment != null ? !comment.equals(review.comment) : review.comment != null) return false;
+        if (date != null ? !date.equals(review.date) : review.date != null) return false;
+        if (clientId != null ? !clientId.equals(review.clientId) : review.clientId != null) return false;
+        if (objectId != null ? !objectId.equals(review.objectId) : review.objectId != null) return false;
 
         return true;
     }
@@ -91,21 +92,21 @@ public class Reviews {
 
     @ManyToOne
     @JoinColumn(name = "clientID", referencedColumnName = "clientID", nullable = false)
-    public Clients getClientsByClientId() {
-        return clientsByClientId;
+    public Client getClients() {
+        return clients;
     }
 
-    public void setClientsByClientId(Clients clientsByClientId) {
-        this.clientsByClientId = clientsByClientId;
+    public void setClients(Client clientByClientId) {
+        this.clients = clientByClientId;
     }
 
     @ManyToOne
     @JoinColumn(name = "objectID", referencedColumnName = "objectID", nullable = false)
-    public Objects getObjectsByObjectId() {
-        return objectsByObjectId;
+    public Object getObjects() {
+        return objects;
     }
 
-    public void setObjectsByObjectId(Objects objectsByObjectId) {
-        this.objectsByObjectId = objectsByObjectId;
+    public void setObjects(Object objectByObjectId) {
+        this.objects = objectByObjectId;
     }
 }

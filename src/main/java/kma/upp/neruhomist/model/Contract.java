@@ -4,8 +4,9 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Date;
 
-@Entity
-public class Contracts {
+@Entity(name = "contracts")
+public class Contract {
+
     private Integer contractId;
     private Date startDate;
     private Date endDate;
@@ -13,9 +14,9 @@ public class Contracts {
     private Integer clientId;
     private Integer objectId;
     private Integer workerId;
-    private Clients clientsByClientId;
-    private Objects objectsByObjectId;
-    private Workers workersByWorkerId;
+    private Client client;
+    private Object object;
+    private Worker worker;
 
     @Id
     @Column(name = "contractID")
@@ -88,20 +89,20 @@ public class Contracts {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(java.lang.Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Contracts contracts = (Contracts) o;
+        Contract contract = (Contract) o;
 
-        if (contractId != null ? !contractId.equals(contracts.contractId) : contracts.contractId != null) return false;
-        if (startDate != null ? !startDate.equals(contracts.startDate) : contracts.startDate != null) return false;
-        if (endDate != null ? !endDate.equals(contracts.endDate) : contracts.endDate != null) return false;
-        if (monthlyPayment != null ? !monthlyPayment.equals(contracts.monthlyPayment) : contracts.monthlyPayment != null)
+        if (contractId != null ? !contractId.equals(contract.contractId) : contract.contractId != null) return false;
+        if (startDate != null ? !startDate.equals(contract.startDate) : contract.startDate != null) return false;
+        if (endDate != null ? !endDate.equals(contract.endDate) : contract.endDate != null) return false;
+        if (monthlyPayment != null ? !monthlyPayment.equals(contract.monthlyPayment) : contract.monthlyPayment != null)
             return false;
-        if (clientId != null ? !clientId.equals(contracts.clientId) : contracts.clientId != null) return false;
-        if (objectId != null ? !objectId.equals(contracts.objectId) : contracts.objectId != null) return false;
-        if (workerId != null ? !workerId.equals(contracts.workerId) : contracts.workerId != null) return false;
+        if (clientId != null ? !clientId.equals(contract.clientId) : contract.clientId != null) return false;
+        if (objectId != null ? !objectId.equals(contract.objectId) : contract.objectId != null) return false;
+        if (workerId != null ? !workerId.equals(contract.workerId) : contract.workerId != null) return false;
 
         return true;
     }
@@ -120,31 +121,31 @@ public class Contracts {
 
     @ManyToOne
     @JoinColumn(name = "clientID", referencedColumnName = "clientID", nullable = false)
-    public Clients getClientsByClientId() {
-        return clientsByClientId;
+    public Client getClient() {
+        return client;
     }
 
-    public void setClientsByClientId(Clients clientsByClientId) {
-        this.clientsByClientId = clientsByClientId;
+    public void setClient(Client clientByClientId) {
+        this.client = clientByClientId;
     }
 
     @ManyToOne
     @JoinColumn(name = "objectID", referencedColumnName = "objectID", nullable = false)
-    public Objects getObjectsByObjectId() {
-        return objectsByObjectId;
+    public Object getObject() {
+        return object;
     }
 
-    public void setObjectsByObjectId(Objects objectsByObjectId) {
-        this.objectsByObjectId = objectsByObjectId;
+    public void setObject(Object objectByObjectId) {
+        this.object = objectByObjectId;
     }
 
     @ManyToOne
     @JoinColumn(name = "workerID", referencedColumnName = "workerID", nullable = false)
-    public Workers getWorkersByWorkerId() {
-        return workersByWorkerId;
+    public Worker getWorker() {
+        return worker;
     }
 
-    public void setWorkersByWorkerId(Workers workersByWorkerId) {
-        this.workersByWorkerId = workersByWorkerId;
+    public void setWorker(Worker workerByWorkerId) {
+        this.worker = workerByWorkerId;
     }
 }

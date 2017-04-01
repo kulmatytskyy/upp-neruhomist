@@ -6,10 +6,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.Collection;
 
-@Entity
-public class Propertytypes {
+@Entity(name = "propertytypes")
+public class PropertyType {
+
     private String propName;
-    private Collection<Objects> objectsByPropName;
+    private Collection<Object> objects;
 
     @Id
     @Column(name = "propName")
@@ -22,11 +23,11 @@ public class Propertytypes {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(java.lang.Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Propertytypes that = (Propertytypes) o;
+        PropertyType that = (PropertyType) o;
 
         if (propName != null ? !propName.equals(that.propName) : that.propName != null) return false;
 
@@ -38,12 +39,12 @@ public class Propertytypes {
         return propName != null ? propName.hashCode() : 0;
     }
 
-    @OneToMany(mappedBy = "propertytypesByPropName")
-    public Collection<Objects> getObjectsByPropName() {
-        return objectsByPropName;
+    @OneToMany(mappedBy = "propertyType")
+    public Collection<Object> getObjects() {
+        return objects;
     }
 
-    public void setObjectsByPropName(Collection<Objects> objectsByPropName) {
-        this.objectsByPropName = objectsByPropName;
+    public void setObjects(Collection<Object> objectByPropName) {
+        this.objects = objectByPropName;
     }
 }

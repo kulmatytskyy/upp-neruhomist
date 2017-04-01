@@ -4,8 +4,9 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Collection;
 
-@Entity
-public class Objects {
+@Entity(name = "objects")
+public class Object {
+
     private Integer objectId;
     private String address;
     private Byte rooms;
@@ -14,12 +15,12 @@ public class Objects {
     private Integer ownerId;
     private String propName;
     private Integer workerId;
-    private Collection<Contracts> contractsByObjectId;
-    private Collection<Inspections> inspectionsByObjectId;
-    private Owners ownersByOwnerId;
-    private Propertytypes propertytypesByPropName;
-    private Workers workersByWorkerId;
-    private Collection<Reviews> reviewsByObjectId;
+    private Collection<Contract> contracts;
+    private Collection<Inspection> inspections;
+    private Owner owner;
+    private PropertyType propertyType;
+    private Worker worker;
+    private Collection<Review> reviews;
 
     @Id
     @Column(name = "objectID")
@@ -102,20 +103,20 @@ public class Objects {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(java.lang.Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Objects objects = (Objects) o;
+        Object object = (Object) o;
 
-        if (objectId != null ? !objectId.equals(objects.objectId) : objects.objectId != null) return false;
-        if (address != null ? !address.equals(objects.address) : objects.address != null) return false;
-        if (rooms != null ? !rooms.equals(objects.rooms) : objects.rooms != null) return false;
-        if (payment != null ? !payment.equals(objects.payment) : objects.payment != null) return false;
-        if (rentedNow != null ? !rentedNow.equals(objects.rentedNow) : objects.rentedNow != null) return false;
-        if (ownerId != null ? !ownerId.equals(objects.ownerId) : objects.ownerId != null) return false;
-        if (propName != null ? !propName.equals(objects.propName) : objects.propName != null) return false;
-        if (workerId != null ? !workerId.equals(objects.workerId) : objects.workerId != null) return false;
+        if (objectId != null ? !objectId.equals(object.objectId) : object.objectId != null) return false;
+        if (address != null ? !address.equals(object.address) : object.address != null) return false;
+        if (rooms != null ? !rooms.equals(object.rooms) : object.rooms != null) return false;
+        if (payment != null ? !payment.equals(object.payment) : object.payment != null) return false;
+        if (rentedNow != null ? !rentedNow.equals(object.rentedNow) : object.rentedNow != null) return false;
+        if (ownerId != null ? !ownerId.equals(object.ownerId) : object.ownerId != null) return false;
+        if (propName != null ? !propName.equals(object.propName) : object.propName != null) return false;
+        if (workerId != null ? !workerId.equals(object.workerId) : object.workerId != null) return false;
 
         return true;
     }
@@ -133,60 +134,60 @@ public class Objects {
         return result;
     }
 
-    @OneToMany(mappedBy = "objectsByObjectId")
-    public Collection<Contracts> getContractsByObjectId() {
-        return contractsByObjectId;
+    @OneToMany(mappedBy = "object")
+    public Collection<Contract> getContracts() {
+        return contracts;
     }
 
-    public void setContractsByObjectId(Collection<Contracts> contractsByObjectId) {
-        this.contractsByObjectId = contractsByObjectId;
+    public void setContracts(Collection<Contract> contractByObjectId) {
+        this.contracts = contractByObjectId;
     }
 
-    @OneToMany(mappedBy = "objectsByObjectId")
-    public Collection<Inspections> getInspectionsByObjectId() {
-        return inspectionsByObjectId;
+    @OneToMany(mappedBy = "object")
+    public Collection<Inspection> getInspections() {
+        return inspections;
     }
 
-    public void setInspectionsByObjectId(Collection<Inspections> inspectionsByObjectId) {
-        this.inspectionsByObjectId = inspectionsByObjectId;
+    public void setInspections(Collection<Inspection> inspectionByObjectId) {
+        this.inspections = inspectionByObjectId;
     }
 
     @ManyToOne
     @JoinColumn(name = "ownerID", referencedColumnName = "ownerID", nullable = false)
-    public Owners getOwnersByOwnerId() {
-        return ownersByOwnerId;
+    public Owner getOwner() {
+        return owner;
     }
 
-    public void setOwnersByOwnerId(Owners ownersByOwnerId) {
-        this.ownersByOwnerId = ownersByOwnerId;
+    public void setOwner(Owner ownerByOwnerId) {
+        this.owner = ownerByOwnerId;
     }
 
     @ManyToOne
     @JoinColumn(name = "propName", referencedColumnName = "propName", nullable = false)
-    public Propertytypes getPropertytypesByPropName() {
-        return propertytypesByPropName;
+    public PropertyType getPropertyType() {
+        return propertyType;
     }
 
-    public void setPropertytypesByPropName(Propertytypes propertytypesByPropName) {
-        this.propertytypesByPropName = propertytypesByPropName;
+    public void setPropertyType(PropertyType propertyTypeByPropName) {
+        this.propertyType = propertyTypeByPropName;
     }
 
     @ManyToOne
     @JoinColumn(name = "workerID", referencedColumnName = "workerID", nullable = false)
-    public Workers getWorkersByWorkerId() {
-        return workersByWorkerId;
+    public Worker getWorker() {
+        return worker;
     }
 
-    public void setWorkersByWorkerId(Workers workersByWorkerId) {
-        this.workersByWorkerId = workersByWorkerId;
+    public void setWorker(Worker workerByWorkerId) {
+        this.worker = workerByWorkerId;
     }
 
-    @OneToMany(mappedBy = "objectsByObjectId")
-    public Collection<Reviews> getReviewsByObjectId() {
-        return reviewsByObjectId;
+    @OneToMany(mappedBy = "objects")
+    public Collection<Review> getReviews() {
+        return reviews;
     }
 
-    public void setReviewsByObjectId(Collection<Reviews> reviewsByObjectId) {
-        this.reviewsByObjectId = reviewsByObjectId;
+    public void setReviews(Collection<Review> reviewByObjectId) {
+        this.reviews = reviewByObjectId;
     }
 }
