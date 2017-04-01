@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:mysql://upp.ca8dvrkyvukr.eu-central-1.rds.amazonaws.com:3306/rent</property>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <mapping class="kma.upp.neruhomist.repository.Clients"/>
+    <mapping class="kma.upp.neruhomist.repository.Contracts"/>
+    <mapping class="kma.upp.neruhomist.repository.Inspections"/>
+    <mapping class="kma.upp.neruhomist.repository.Objects"/>
+    <mapping class="kma.upp.neruhomist.repository.Owners"/>
+    <mapping class="kma.upp.neruhomist.repository.Propertytypes"/>
+    <mapping class="kma.upp.neruhomist.repository.Reviews"/>
+    <mapping class="kma.upp.neruhomist.repository.Workers"/>
+    <mapping class="kma.upp.neruhomist.model.Clients"/>
+    <mapping class="kma.upp.neruhomist.model.Contracts"/>
+    <mapping class="kma.upp.neruhomist.model.Inspections"/>
+    <mapping class="kma.upp.neruhomist.model.Objects"/>
+    <mapping class="kma.upp.neruhomist.model.Owners"/>
+    <mapping class="kma.upp.neruhomist.model.Propertytypes"/>
+    <mapping class="kma.upp.neruhomist.model.Reviews"/>
+    <mapping class="kma.upp.neruhomist.model.Workers"/>
+    <!-- <property name="connection.username"/> -->
+    <!-- <property name="connection.password"/> -->
+
+    <!-- DB schema will be updated if needed -->
+    <!-- <property name="hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>
