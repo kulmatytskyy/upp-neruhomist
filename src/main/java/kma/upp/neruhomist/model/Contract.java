@@ -1,19 +1,21 @@
 package kma.upp.neruhomist.model;
 
+import org.hibernate.annotations.Proxy;
+
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.sql.Date;
 
 @Entity(name = "contracts")
+@Transactional
+@Proxy(lazy = false)
 public class Contract {
 
     private Integer contractId;
     private Date startDate;
     private Date endDate;
     private BigDecimal monthlyPayment;
-    private Integer clientId;
-    private Integer objectId;
-    private Integer workerId;
     private Client client;
     private Object object;
     private Worker worker;
@@ -58,36 +60,6 @@ public class Contract {
         this.monthlyPayment = monthlyPayment;
     }
 
-    @Basic
-    @Column(name = "clientID")
-    public Integer getClientId() {
-        return clientId;
-    }
-
-    public void setClientId(Integer clientId) {
-        this.clientId = clientId;
-    }
-
-    @Basic
-    @Column(name = "objectID")
-    public Integer getObjectId() {
-        return objectId;
-    }
-
-    public void setObjectId(Integer objectId) {
-        this.objectId = objectId;
-    }
-
-    @Basic
-    @Column(name = "workerID")
-    public Integer getWorkerId() {
-        return workerId;
-    }
-
-    public void setWorkerId(Integer workerId) {
-        this.workerId = workerId;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) return true;
@@ -100,9 +72,6 @@ public class Contract {
         if (endDate != null ? !endDate.equals(contract.endDate) : contract.endDate != null) return false;
         if (monthlyPayment != null ? !monthlyPayment.equals(contract.monthlyPayment) : contract.monthlyPayment != null)
             return false;
-        if (clientId != null ? !clientId.equals(contract.clientId) : contract.clientId != null) return false;
-        if (objectId != null ? !objectId.equals(contract.objectId) : contract.objectId != null) return false;
-        if (workerId != null ? !workerId.equals(contract.workerId) : contract.workerId != null) return false;
 
         return true;
     }
@@ -113,9 +82,6 @@ public class Contract {
         result = 31 * result + (startDate != null ? startDate.hashCode() : 0);
         result = 31 * result + (endDate != null ? endDate.hashCode() : 0);
         result = 31 * result + (monthlyPayment != null ? monthlyPayment.hashCode() : 0);
-        result = 31 * result + (clientId != null ? clientId.hashCode() : 0);
-        result = 31 * result + (objectId != null ? objectId.hashCode() : 0);
-        result = 31 * result + (workerId != null ? workerId.hashCode() : 0);
         return result;
     }
 
@@ -147,5 +113,18 @@ public class Contract {
 
     public void setWorker(Worker workerByWorkerId) {
         this.worker = workerByWorkerId;
+    }
+
+    @Override
+    public String toString() {
+        return "Contract{" +
+                "contractId=" + contractId +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", monthlyPayment=" + monthlyPayment +
+                ", client=" + client +
+                ", object=" + object +
+                ", worker=" + worker +
+                '}';
     }
 }

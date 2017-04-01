@@ -1,10 +1,12 @@
 package kma.upp.neruhomist.model;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.Collection;
 
 @Entity(name = "objects")
+@Transactional
 public class Object {
 
     private Integer objectId;
@@ -12,9 +14,6 @@ public class Object {
     private Byte rooms;
     private BigDecimal payment;
     private Byte rentedNow;
-    private Integer ownerId;
-    private String propName;
-    private Integer workerId;
     private Collection<Contract> contracts;
     private Collection<Inspection> inspections;
     private Owner owner;
@@ -72,36 +71,6 @@ public class Object {
         this.rentedNow = rentedNow;
     }
 
-    @Basic
-    @Column(name = "ownerID")
-    public Integer getOwnerId() {
-        return ownerId;
-    }
-
-    public void setOwnerId(Integer ownerId) {
-        this.ownerId = ownerId;
-    }
-
-    @Basic
-    @Column(name = "propName")
-    public String getPropName() {
-        return propName;
-    }
-
-    public void setPropName(String propName) {
-        this.propName = propName;
-    }
-
-    @Basic
-    @Column(name = "workerID")
-    public Integer getWorkerId() {
-        return workerId;
-    }
-
-    public void setWorkerId(Integer workerId) {
-        this.workerId = workerId;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) return true;
@@ -114,9 +83,6 @@ public class Object {
         if (rooms != null ? !rooms.equals(object.rooms) : object.rooms != null) return false;
         if (payment != null ? !payment.equals(object.payment) : object.payment != null) return false;
         if (rentedNow != null ? !rentedNow.equals(object.rentedNow) : object.rentedNow != null) return false;
-        if (ownerId != null ? !ownerId.equals(object.ownerId) : object.ownerId != null) return false;
-        if (propName != null ? !propName.equals(object.propName) : object.propName != null) return false;
-        if (workerId != null ? !workerId.equals(object.workerId) : object.workerId != null) return false;
 
         return true;
     }
@@ -128,9 +94,6 @@ public class Object {
         result = 31 * result + (rooms != null ? rooms.hashCode() : 0);
         result = 31 * result + (payment != null ? payment.hashCode() : 0);
         result = 31 * result + (rentedNow != null ? rentedNow.hashCode() : 0);
-        result = 31 * result + (ownerId != null ? ownerId.hashCode() : 0);
-        result = 31 * result + (propName != null ? propName.hashCode() : 0);
-        result = 31 * result + (workerId != null ? workerId.hashCode() : 0);
         return result;
     }
 
@@ -189,5 +152,19 @@ public class Object {
 
     public void setReviews(Collection<Review> reviewByObjectId) {
         this.reviews = reviewByObjectId;
+    }
+
+    @Override
+    public String toString() {
+        return "Object{" +
+                "objectId=" + objectId +
+                ", address='" + address + '\'' +
+                ", rooms=" + rooms +
+                ", payment=" + payment +
+                ", rentedNow=" + rentedNow +
+                ", owner=" + owner +
+                ", propertyType=" + propertyType +
+                ", worker=" + worker +
+                '}';
     }
 }

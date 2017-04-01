@@ -4,9 +4,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.transaction.Transactional;
 import java.util.Collection;
 
 @Entity(name = "propertytypes")
+@Transactional
 public class PropertyType {
 
     private String propName;
@@ -46,5 +48,12 @@ public class PropertyType {
 
     public void setObjects(Collection<Object> objectByPropName) {
         this.objects = objectByPropName;
+    }
+
+    @Override
+    public String toString() {
+        return "PropertyType{" +
+                "propName='" + propName + '\'' +
+                '}';
     }
 }

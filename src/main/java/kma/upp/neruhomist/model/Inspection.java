@@ -1,16 +1,16 @@
 package kma.upp.neruhomist.model;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.sql.Date;
 
 @Entity(name = "inspections")
+@Transactional
 public class Inspection {
 
     private Integer inspectionId;
     private String comment;
     private Date date;
-    private Integer workerId;
-    private Integer objectId;
     private Worker worker;
     private Object object;
 
@@ -44,26 +44,6 @@ public class Inspection {
         this.date = date;
     }
 
-    @Basic
-    @Column(name = "workerID")
-    public Integer getWorkerId() {
-        return workerId;
-    }
-
-    public void setWorkerId(Integer workerId) {
-        this.workerId = workerId;
-    }
-
-    @Basic
-    @Column(name = "objectID")
-    public Integer getObjectId() {
-        return objectId;
-    }
-
-    public void setObjectId(Integer objectId) {
-        this.objectId = objectId;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) return true;
@@ -74,8 +54,6 @@ public class Inspection {
         if (inspectionId != null ? !inspectionId.equals(that.inspectionId) : that.inspectionId != null) return false;
         if (comment != null ? !comment.equals(that.comment) : that.comment != null) return false;
         if (date != null ? !date.equals(that.date) : that.date != null) return false;
-        if (workerId != null ? !workerId.equals(that.workerId) : that.workerId != null) return false;
-        if (objectId != null ? !objectId.equals(that.objectId) : that.objectId != null) return false;
 
         return true;
     }
@@ -85,8 +63,6 @@ public class Inspection {
         int result = inspectionId != null ? inspectionId.hashCode() : 0;
         result = 31 * result + (comment != null ? comment.hashCode() : 0);
         result = 31 * result + (date != null ? date.hashCode() : 0);
-        result = 31 * result + (workerId != null ? workerId.hashCode() : 0);
-        result = 31 * result + (objectId != null ? objectId.hashCode() : 0);
         return result;
     }
 
@@ -108,5 +84,16 @@ public class Inspection {
 
     public void setObject(Object objectByObjectId) {
         this.object = objectByObjectId;
+    }
+
+    @Override
+    public String toString() {
+        return "Inspection{" +
+                "inspectionId=" + inspectionId +
+                ", comment='" + comment + '\'' +
+                ", date=" + date +
+                ", worker=" + worker +
+                ", object=" + object +
+                '}';
     }
 }

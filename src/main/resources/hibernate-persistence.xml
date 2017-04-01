@@ -2,6 +2,8 @@
 <!DOCTYPE hibernate-configuration PUBLIC
     "-//Hibernate/Hibernate Configuration DTD//EN"
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<!-- This is not real JPA configuration, it was used by Idea to generate entities
+     Please, do not delete it, as it may be needed to update entities -->
 <hibernate-configuration>
   <session-factory>
     <property name="connection.url">jdbc:mysql://upp.ca8dvrkyvukr.eu-central-1.rds.amazonaws.com:3306/rent</property>

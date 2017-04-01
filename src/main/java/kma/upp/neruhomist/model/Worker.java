@@ -1,9 +1,11 @@
 package kma.upp.neruhomist.model;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.util.Collection;
 
 @Entity(name = "workers")
+@Transactional
 public class Worker {
 
     private Integer workerId;
@@ -103,5 +105,15 @@ public class Worker {
 
     public void setObjects(Collection<Object> objectByWorkerId) {
         this.objects = objectByWorkerId;
+    }
+
+    @Override
+    public String toString() {
+        return "Worker{" +
+                "workerId=" + workerId +
+                ", surname='" + surname + '\'' +
+                ", phone='" + phone + '\'' +
+                ", position='" + position + '\'' +
+                '}';
     }
 }

@@ -1,9 +1,11 @@
 package kma.upp.neruhomist.model;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.util.Collection;
 
 @Entity(name = "owners")
+@Transactional
 public class Owner {
 
     private Integer ownerId;
@@ -110,5 +112,17 @@ public class Owner {
 
     public void setObjects(Collection<Object> objectByOwnerId) {
         this.objects = objectByOwnerId;
+    }
+
+    @Override
+    public String toString() {
+        return "Owner{" +
+                "ownerId=" + ownerId +
+                ", phone='" + phone + '\'' +
+                ", name='" + name + '\'' +
+                ", legalOwner=" + legalOwner +
+                ", contactName='" + contactName + '\'' +
+                ", businessType='" + businessType + '\'' +
+                '}';
     }
 }

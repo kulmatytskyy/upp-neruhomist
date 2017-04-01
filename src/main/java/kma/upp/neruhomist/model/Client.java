@@ -1,10 +1,15 @@
 package kma.upp.neruhomist.model;
 
+import org.hibernate.annotations.Proxy;
+
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.Collection;
 
 @Entity(name = "clients")
+@Transactional
+@Proxy(lazy = false)
 public class Client {
 
     private Integer clientId;
@@ -108,5 +113,16 @@ public class Client {
 
     public void setReviews(Collection<Review> reviewByClientId) {
         this.reviews = reviewByClientId;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "clientId=" + clientId +
+                ", surname='" + surname + '\'' +
+                ", phone='" + phone + '\'' +
+                ", type='" + type + '\'' +
+                ", maximumPayment=" + maximumPayment +
+                '}';
     }
 }
