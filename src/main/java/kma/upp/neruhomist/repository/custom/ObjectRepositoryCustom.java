@@ -4,6 +4,6 @@ import java.util.List;
 
 public interface ObjectRepositoryCustom {
 
-    List<Integer> allRoomsNum();
+    List<Byte> allRoomsNum();
 
 }

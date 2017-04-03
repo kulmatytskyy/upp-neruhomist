@@ -16,8 +16,16 @@ public class Worker {
     private Collection<Inspection> inspections;
     private Collection<Object> objects;
 
+    public Worker() {
+    }
+
+    public Worker(Integer workerId) {
+        this.workerId = workerId;
+    }
+
     @Id
     @Column(name = "workerID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer getWorkerId() {
         return workerId;
     }

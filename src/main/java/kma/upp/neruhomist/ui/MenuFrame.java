@@ -191,13 +191,13 @@ public class MenuFrame extends DelayedInitJFrame {
 
         getContentPane().add(panelVyhid, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 360, 50));
 
-        attachEventsToButtons();
+        attachActionsToButtons();
 
         pack();
 
     }
 
-    private void attachEventsToButtons() {
+    private void attachActionsToButtons() {
 
         final Map<JButton, JFrame> buttonFrameMap = ImmutableMap.<JButton, JFrame>builder()
                 .put(buttonArchive, archiveFrame)
@@ -211,7 +211,7 @@ public class MenuFrame extends DelayedInitJFrame {
 
         buttonFrameMap.forEach((button, frame) -> button.addActionListener(actionEvent -> {
             dispose();
-            EventQueue.invokeLater(() -> searchFrame.setVisible(true));
+            EventQueue.invokeLater(() -> frame.setVisible(true));
         }));
 
         buttonVyhid.addActionListener(actionEvent -> dispose());

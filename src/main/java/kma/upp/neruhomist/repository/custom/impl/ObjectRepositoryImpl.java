@@ -14,8 +14,8 @@ public class ObjectRepositoryImpl implements ObjectRepositoryCustom {
     private EntityManager entityManager;
 
     @Override
-    public List<Integer> allRoomsNum() {
-        return entityManager.createNativeQuery(SELECT_DISTINCT_ROOMS_SQL, Integer.class).getResultList();
+    public List<Byte> allRoomsNum() {
+        return entityManager.createNativeQuery(SELECT_DISTINCT_ROOMS_SQL).getResultList();
     }
 
 }

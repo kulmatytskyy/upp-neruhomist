@@ -16,8 +16,16 @@ public class Owner {
     private String businessType;
     private Collection<Object> objects;
 
+    public Owner() {
+    }
+
+    public Owner(Integer ownerId) {
+        this.ownerId = ownerId;
+    }
+
     @Id
     @Column(name = "ownerID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer getOwnerId() {
         return ownerId;
     }

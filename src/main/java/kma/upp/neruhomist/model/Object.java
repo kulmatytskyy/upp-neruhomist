@@ -23,6 +23,7 @@ public class Object {
 
     @Id
     @Column(name = "objectID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer getObjectId() {
         return objectId;
     }

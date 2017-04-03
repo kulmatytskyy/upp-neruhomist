@@ -14,6 +14,12 @@ public class PropertyType {
     private String propName;
     private Collection<Object> objects;
 
+    public PropertyType(){}
+
+    public PropertyType(String propName) {
+        this.propName = propName;
+    }
+
     @Id
     @Column(name = "propName")
     public String getPropName() {
