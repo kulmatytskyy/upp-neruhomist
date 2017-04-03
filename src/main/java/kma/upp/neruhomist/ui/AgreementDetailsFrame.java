@@ -62,31 +62,31 @@ public class AgreementDetailsFrame extends javax.swing.JFrame {
         tableInspekcia = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Деталі договору №228");
+        setTitle("Р”РµС‚Р°Р»С– РґРѕРіРѕРІРѕСЂСѓ в„–228");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelObject.setBorder(javax.swing.BorderFactory.createTitledBorder("Об'єкт"));
+        panelObject.setBorder(javax.swing.BorderFactory.createTitledBorder("РћР±'С”РєС‚"));
         panelObject.setName("panelObject"); // NOI18N
 
-        labelAdresa.setText("Адреса:");
+        labelAdresa.setText("РђРґСЂРµСЃР°:");
         labelAdresa.setName("labelAdresa"); // NOI18N
 
-        labelKimnat.setText("Кімнат:");
+        labelKimnat.setText("РљС–РјРЅР°С‚:");
         labelKimnat.setName("labelKimnat"); // NOI18N
 
-        labelTyp.setText("Тип:");
+        labelTyp.setText("РўРёРї:");
         labelTyp.setName("labelTyp"); // NOI18N
 
-        labelAdresa_value.setText("Олеко Дундича вулиця, буд. 22, кв. 13");
+        labelAdresa_value.setText("РћР»РµРєРѕ Р”СѓРЅРґРёС‡Р° РІСѓР»РёС†СЏ, Р±СѓРґ. 22, РєРІ. 13");
         labelAdresa_value.setName("labelAdresa_value"); // NOI18N
 
         labelKimnat_value.setText("2");
         labelKimnat_value.setName("labelKimnat_value"); // NOI18N
 
-        labelTyp_value.setText("житловий");
+        labelTyp_value.setText("Р¶РёС‚Р»РѕРІРёР№");
         labelTyp_value.setName("labelTyp_value"); // NOI18N
 
-        buttonDeatilsObject.setText("Детальніше про об'єкт...");
+        buttonDeatilsObject.setText("Р”РµС‚Р°Р»СЊРЅС–С€Рµ РїСЂРѕ РѕР±'С”РєС‚...");
         buttonDeatilsObject.setName("buttonDeatilsObject"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(panelObject);
@@ -138,19 +138,19 @@ public class AgreementDetailsFrame extends javax.swing.JFrame {
 
         getContentPane().add(panelObject, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 530, 100));
 
-        panelDohovir.setBorder(javax.swing.BorderFactory.createTitledBorder("Договір"));
+        panelDohovir.setBorder(javax.swing.BorderFactory.createTitledBorder("Р”РѕРіРѕРІС–СЂ"));
         panelDohovir.setName("panelDohovir"); // NOI18N
 
-        labelNomerDohovoru.setText("Номер договору");
+        labelNomerDohovoru.setText("РќРѕРјРµСЂ РґРѕРіРѕРІРѕСЂСѓ");
         labelNomerDohovoru.setName("labelNomerDohovoru"); // NOI18N
 
-        labelDataUkladannia.setText("Дата укладання");
+        labelDataUkladannia.setText("Р”Р°С‚Р° СѓРєР»Р°РґР°РЅРЅСЏ");
         labelDataUkladannia.setName("labelDataUkladannia"); // NOI18N
 
-        labelDataPochatkuOrendy.setText("Дата початку оренди");
+        labelDataPochatkuOrendy.setText("Р”Р°С‚Р° РїРѕС‡Р°С‚РєСѓ РѕСЂРµРЅРґРё");
         labelDataPochatkuOrendy.setName("labelDataPochatkuOrendy"); // NOI18N
 
-        labelDataZakinchenniaOrendy.setText("Дата закінчення оренди");
+        labelDataZakinchenniaOrendy.setText("Р”Р°С‚Р° Р·Р°РєС–РЅС‡РµРЅРЅСЏ РѕСЂРµРЅРґРё");
         labelDataZakinchenniaOrendy.setName("labelDataZakinchenniaOrendy"); // NOI18N
 
         labelNomerDohovoru_value.setText("228");
@@ -165,13 +165,13 @@ public class AgreementDetailsFrame extends javax.swing.JFrame {
         labelDataZakinchenniaOrendy_value.setText("01.02.2017");
         labelDataZakinchenniaOrendy_value.setName("labelDataZakinchenniaOrendy_value"); // NOI18N
 
-        labelStatus.setText("Статус");
+        labelStatus.setText("РЎС‚Р°С‚СѓСЃ");
         labelStatus.setName("labelStatus"); // NOI18N
 
-        labelStatus_value.setText("Архів");
+        labelStatus_value.setText("РђСЂС…С–РІ");
         labelStatus_value.setName("labelStatus_value"); // NOI18N
 
-        buttonDeatilsDohovir.setText("Детальніше про договір...");
+        buttonDeatilsDohovir.setText("Р”РµС‚Р°Р»СЊРЅС–С€Рµ РїСЂРѕ РґРѕРіРѕРІС–СЂ...");
         buttonDeatilsDohovir.setName("buttonDeatilsDohovir"); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(panelDohovir);
@@ -237,7 +237,7 @@ public class AgreementDetailsFrame extends javax.swing.JFrame {
 
         panelButtonOK.setName("panelButtonOK"); // NOI18N
 
-        buttonOK.setText("ОК");
+        buttonOK.setText("РћРљ");
         buttonOK.setName("buttonOK"); // NOI18N
         buttonOK.setPreferredSize(null);
         buttonOK.addActionListener(new java.awt.event.ActionListener() {
@@ -267,7 +267,7 @@ public class AgreementDetailsFrame extends javax.swing.JFrame {
 
         panelButtonVidhylyty.setName("panelButtonVidhylyty"); // NOI18N
 
-        buttonVidhylyty.setText("Відхилити");
+        buttonVidhylyty.setText("Р’С–РґС…РёР»РёС‚Рё");
         buttonVidhylyty.setToolTipText("");
         buttonVidhylyty.setName("buttonVidhylyty"); // NOI18N
         buttonVidhylyty.setPreferredSize(null);
@@ -298,19 +298,19 @@ public class AgreementDetailsFrame extends javax.swing.JFrame {
 
         getContentPane().add(panelButtons, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 540, 540, 40));
 
-        panelClient.setBorder(javax.swing.BorderFactory.createTitledBorder("Клієнт"));
+        panelClient.setBorder(javax.swing.BorderFactory.createTitledBorder("РљР»С–С”РЅС‚"));
         panelClient.setName("panelClient"); // NOI18N
 
-        labelClient.setText("Глибовець Андрій Миколайович");
+        labelClient.setText("Р“Р»РёР±РѕРІРµС†СЊ РђРЅРґСЂС–Р№ РњРёРєРѕР»Р°Р№РѕРІРёС‡");
         labelClient.setName("labelClient"); // NOI18N
 
-        labelClientTelefon.setText("Телефон");
+        labelClientTelefon.setText("РўРµР»РµС„РѕРЅ");
         labelClientTelefon.setName("labelClientTelefon"); // NOI18N
 
         labelClientTelefon_value.setText("0449379992");
         labelClientTelefon_value.setName("labelClientTelefon_value"); // NOI18N
 
-        buttonDeatilsSpivrobitnyk.setText("Детальніше про співробітника...");
+        buttonDeatilsSpivrobitnyk.setText("Р”РµС‚Р°Р»СЊРЅС–С€Рµ РїСЂРѕ СЃРїС–РІСЂРѕР±С–С‚РЅРёРєР°...");
         buttonDeatilsSpivrobitnyk.setName("buttonDeatilsSpivrobitnyk"); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(panelClient);
@@ -348,19 +348,19 @@ public class AgreementDetailsFrame extends javax.swing.JFrame {
 
         getContentPane().add(panelClient, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 530, 60));
 
-        panelOwner.setBorder(javax.swing.BorderFactory.createTitledBorder("Власник"));
+        panelOwner.setBorder(javax.swing.BorderFactory.createTitledBorder("Р’Р»Р°СЃРЅРёРє"));
         panelOwner.setName("panelOwner"); // NOI18N
 
-        labelOwner.setText("Джейк Джиллєнхол");
+        labelOwner.setText("Р”Р¶РµР№Рє Р”Р¶РёР»Р»С”РЅС…РѕР»");
         labelOwner.setName("labelOwner"); // NOI18N
 
-        labelOwnerTelefon.setText("Телефон");
+        labelOwnerTelefon.setText("РўРµР»РµС„РѕРЅ");
         labelOwnerTelefon.setName("labelOwnerTelefon"); // NOI18N
 
         labelOwnerTelefon_value.setText("0447777777");
         labelOwnerTelefon_value.setName("labelOwnerTelefon_value"); // NOI18N
 
-        buttonDeatilsClient.setText("Детальніше про клієнта...");
+        buttonDeatilsClient.setText("Р”РµС‚Р°Р»СЊРЅС–С€Рµ РїСЂРѕ РєР»С–С”РЅС‚Р°...");
         buttonDeatilsClient.setName("buttonDeatilsClient"); // NOI18N
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(panelOwner);
@@ -398,22 +398,22 @@ public class AgreementDetailsFrame extends javax.swing.JFrame {
 
         getContentPane().add(panelOwner, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 218, 530, 60));
 
-        panelInspekcii.setBorder(javax.swing.BorderFactory.createTitledBorder("Інспекції"));
+        panelInspekcii.setBorder(javax.swing.BorderFactory.createTitledBorder("Р†РЅСЃРїРµРєС†С–С—"));
         panelInspekcii.setName("panelInspekcii"); // NOI18N
 
-        buttonDetailsInspekcia.setText("Детальніше про інспекцію...");
-        buttonDetailsInspekcia.setActionCommand("Детальніше про інспекцію...");
+        buttonDetailsInspekcia.setText("Р”РµС‚Р°Р»СЊРЅС–С€Рµ РїСЂРѕ С–РЅСЃРїРµРєС†С–СЋ...");
+        buttonDetailsInspekcia.setActionCommand("Р”РµС‚Р°Р»СЊРЅС–С€Рµ РїСЂРѕ С–РЅСЃРїРµРєС†С–СЋ...");
         buttonDetailsInspekcia.setName("buttonDetailsInspekcia"); // NOI18N
 
         tableInspekcia.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"01.02.2017", "заплановано"},
-                {"01.01.2017", "проведено"},
-                {"01.12.2016", "проведено"},
-                {"01.11.2017", "проведено"}
+                {"01.02.2017", "Р·Р°РїР»Р°РЅРѕРІР°РЅРѕ"},
+                {"01.01.2017", "РїСЂРѕРІРµРґРµРЅРѕ"},
+                {"01.12.2016", "РїСЂРѕРІРµРґРµРЅРѕ"},
+                {"01.11.2017", "РїСЂРѕРІРµРґРµРЅРѕ"}
             },
             new String [] {
-                "Дата", "Стан"
+                "Р”Р°С‚Р°", "РЎС‚Р°РЅ"
             }
         ) {
             Class[] types = new Class [] {

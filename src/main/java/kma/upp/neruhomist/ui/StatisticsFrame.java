@@ -53,47 +53,47 @@ public class StatisticsFrame extends javax.swing.JFrame {
         buttonNazad = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("����������");
+        setTitle("Статистика");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelStatistics.setName("panelStatistics"); // NOI18N
 
-        labelSerVartistNeZhytlovy.setText("�� ��� ����������");
+        labelSerVartistNeZhytlovy.setText("із них нежитлових");
         labelSerVartistNeZhytlovy.setName("labelSerVartistNeZhytlovy"); // NOI18N
 
-        labelSerVartistZhytlovy.setText("�� ��� ��������");
+        labelSerVartistZhytlovy.setText("із них житлових");
         labelSerVartistZhytlovy.setName("labelSerVartistZhytlovy"); // NOI18N
 
-        labelSerVartist.setText("������� ������� ������");
+        labelSerVartist.setText("Середня вартість оренди");
         labelSerVartist.setName("labelSerVartist"); // NOI18N
 
-        labelSerChasOrendovanyNeZhytlovy.setText("�� ��� ����������");
+        labelSerChasOrendovanyNeZhytlovy.setText("із них нежитлових");
         labelSerChasOrendovanyNeZhytlovy.setName("labelSerChasOrendovanyNeZhytlovy"); // NOI18N
 
-        labelSerChasOrendovanyZhytlovy.setText("�� ��� ��������");
+        labelSerChasOrendovanyZhytlovy.setText("із них житлових");
         labelSerChasOrendovanyZhytlovy.setName("labelSerChasOrendovanyZhytlovy"); // NOI18N
 
-        labelSerChasOrendovany.setText("������� ��� ����������� � ������������ ����");
+        labelSerChasOrendovany.setText("Середній час перебування в орендованому стані");
         labelSerChasOrendovany.setName("labelSerChasOrendovany"); // NOI18N
 
-        labelSerChasVystavlenyNeZhytlovy.setText("�� ��� ����������");
+        labelSerChasVystavlenyNeZhytlovy.setText("із них нежитлових");
         labelSerChasVystavlenyNeZhytlovy.setName("labelSerChasVystavlenyNeZhytlovy"); // NOI18N
 
-        labelSerChasVystavlenyZhytlovy.setText("�� ��� ��������");
+        labelSerChasVystavlenyZhytlovy.setText("із них житлових");
         labelSerChasVystavlenyZhytlovy.setName("labelSerChasVystavlenyZhytlovy"); // NOI18N
 
-        labelSerChasVystavleny.setText("������� ��� ����������� � ������������ ����");
+        labelSerChasVystavleny.setText("Середній час перебування у виставленому стані");
         labelSerChasVystavleny.setToolTipText("");
         labelSerChasVystavleny.setName("labelSerChasVystavleny"); // NOI18N
 
-        labelUsogoNeZhytlovyh.setText("�� ��� ����������");
+        labelUsogoNeZhytlovyh.setText("із них нежитлових");
         labelUsogoNeZhytlovyh.setName("labelUsogoNeZhytlovyh"); // NOI18N
 
-        labelUsogoZhytlovyh.setText("�� ��� ��������");
+        labelUsogoZhytlovyh.setText("із них житлових");
         labelUsogoZhytlovyh.setName("labelUsogoZhytlovyh"); // NOI18N
 
-        labelUsogoPrymischen.setText("������ ��������");
+        labelUsogoPrymischen.setText("Усього приміщень");
         labelUsogoPrymischen.setName("labelUsogoPrymischen"); // NOI18N
 
         labelUsogoPrymischen_value.setText("123444");
@@ -105,22 +105,22 @@ public class StatisticsFrame extends javax.swing.JFrame {
         labelUsogoNeZhytlovyh_value.setText("23444");
         labelUsogoNeZhytlovyh_value.setName("labelUsogoNeZhytlovyh_value"); // NOI18N
 
-        labelSerChasVystavleny_value.setText("3 �����");
+        labelSerChasVystavleny_value.setText("3 місяці");
         labelSerChasVystavleny_value.setName("labelSerChasVystavleny_value"); // NOI18N
 
-        labelSerChasVystavlenyZhytlovy_value.setText("5 ������");
+        labelSerChasVystavlenyZhytlovy_value.setText("5 місяців");
         labelSerChasVystavlenyZhytlovy_value.setName("labelSerChasVystavlenyZhytlovy_value"); // NOI18N
 
-        labelSerChasVystavlenyNeZhytlovy_value.setText("1 �����");
+        labelSerChasVystavlenyNeZhytlovy_value.setText("1 місяць");
         labelSerChasVystavlenyNeZhytlovy_value.setName("labelSerChasVystavlenyNeZhytlovy_value"); // NOI18N
 
-        labelSerChasOrendovany_value.setText("2 ���� 1 �����");
+        labelSerChasOrendovany_value.setText("2 роки 1 місяць");
         labelSerChasOrendovany_value.setName("labelSerChasOrendovany_value"); // NOI18N
 
-        labelSerChasOrendovanyZhytlovy_value.setText("2 ���� 5 ������");
+        labelSerChasOrendovanyZhytlovy_value.setText("2 роки 5 місяців");
         labelSerChasOrendovanyZhytlovy_value.setName("labelSerChasOrendovanyZhytlovy_value"); // NOI18N
 
-        labelSerChasOrendovanyNeZhytlovy_value.setText("1 �� 10 ������");
+        labelSerChasOrendovanyNeZhytlovy_value.setText("1 рік 10 місяців");
         labelSerChasOrendovanyNeZhytlovy_value.setName("labelSerChasOrendovanyNeZhytlovy_value"); // NOI18N
 
         labelSerVartist_value.setText("5600");
@@ -132,13 +132,13 @@ public class StatisticsFrame extends javax.swing.JFrame {
         labelSerVartistNeZhytlovy_value.setText("4700");
         labelSerVartistNeZhytlovy_value.setName("labelSerVartistNeZhytlovy_value"); // NOI18N
 
-        buttonUsogoPrymischenPerehlyanutySpysok.setText("����������� ������...");
+        buttonUsogoPrymischenPerehlyanutySpysok.setText("Переглянути список...");
         buttonUsogoPrymischenPerehlyanutySpysok.setName("buttonUsogoPrymischenPerehlyanutySpysok"); // NOI18N
 
-        buttonZhytlovyhPerehlyanutySpysok.setText("����������� ������...");
+        buttonZhytlovyhPerehlyanutySpysok.setText("Переглянути список...");
         buttonZhytlovyhPerehlyanutySpysok.setName("buttonZhytlovyhPerehlyanutySpysok"); // NOI18N
 
-        buttonNeZhytlovyhPerehlyanutySpysok.setText("����������� ������...");
+        buttonNeZhytlovyhPerehlyanutySpysok.setText("Переглянути список...");
         buttonNeZhytlovyhPerehlyanutySpysok.setName("buttonNeZhytlovyhPerehlyanutySpysok"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(panelStatistics);
@@ -254,7 +254,7 @@ public class StatisticsFrame extends javax.swing.JFrame {
 
         panelButton.setName("panelButton"); // NOI18N
 
-        buttonNazad.setText("����� �� ��������� ����");
+        buttonNazad.setText("Назад до головного меню");
         buttonNazad.setName("buttonNazad"); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(panelButton);

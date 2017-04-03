@@ -43,34 +43,34 @@ public class ClientDetailsFrame extends javax.swing.JFrame {
         buttonVidhylyty = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Деталі про клієнта №14");
+        setTitle("Р”РµС‚Р°Р»С– РїСЂРѕ РєР»С–С”РЅС‚Р° в„–14");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelClient.setBorder(javax.swing.BorderFactory.createTitledBorder("Клієнт"));
+        panelClient.setBorder(javax.swing.BorderFactory.createTitledBorder("РљР»С–С”РЅС‚"));
         panelClient.setName("panelClient"); // NOI18N
 
-        labelClient.setText("Глибовець Андрій Миколайович");
+        labelClient.setText("Р“Р»РёР±РѕРІРµС†СЊ РђРЅРґСЂС–Р№ РњРёРєРѕР»Р°Р№РѕРІРёС‡");
         labelClient.setName("labelClient"); // NOI18N
 
-        labelTelefon.setText("Телефон");
+        labelTelefon.setText("РўРµР»РµС„РѕРЅ");
         labelTelefon.setName("labelTelefon"); // NOI18N
 
-        labelTypOsoby.setText("Тип особи");
+        labelTypOsoby.setText("РўРёРї РѕСЃРѕР±Рё");
         labelTypOsoby.setName("labelTypOsoby"); // NOI18N
 
-        labelTypPrymischennya.setText("Тип бажаного приміщення");
+        labelTypPrymischennya.setText("РўРёРї Р±Р°Р¶Р°РЅРѕРіРѕ РїСЂРёРјС–С‰РµРЅРЅСЏ");
         labelTypPrymischennya.setName("labelTypPrymischennya"); // NOI18N
 
-        labelMaxPlata.setText("Максимальна плата");
+        labelMaxPlata.setText("РњР°РєСЃРёРјР°Р»СЊРЅР° РїР»Р°С‚Р°");
         labelMaxPlata.setName("labelMaxPlata"); // NOI18N
 
         labelTelefon_value.setText("0449379992");
         labelTelefon_value.setName("labelTelefon_value"); // NOI18N
 
-        labelTypOsoby_value.setText("фізична");
+        labelTypOsoby_value.setText("С„С–Р·РёС‡РЅР°");
         labelTypOsoby_value.setName("labelTypOsoby_value"); // NOI18N
 
-        labelTypPrymischennya_value.setText("житловий");
+        labelTypPrymischennya_value.setText("Р¶РёС‚Р»РѕРІРёР№");
         labelTypPrymischennya_value.setName("labelTypPrymischennya_value"); // NOI18N
 
         labelMaxPlata_value.setText("6600");
@@ -124,18 +124,18 @@ public class ClientDetailsFrame extends javax.swing.JFrame {
 
         getContentPane().add(panelClient, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 3, 400, 130));
 
-        panelDohovory.setBorder(javax.swing.BorderFactory.createTitledBorder("Договори"));
+        panelDohovory.setBorder(javax.swing.BorderFactory.createTitledBorder("Р”РѕРіРѕРІРѕСЂРё"));
         panelDohovory.setName("panelDohovory"); // NOI18N
 
         tableDohovory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Дубенська вулиця, 35", "активний"},
-                {"Дундича Олеко проспект, 22", "неактивний"},
-                {"Князя Романа вулиця, 7", "активний"},
-                {"Соборна вулиця, 151", "активний"}
+                {"Р”СѓР±РµРЅСЃСЊРєР° РІСѓР»РёС†СЏ, 35", "Р°РєС‚РёРІРЅРёР№"},
+                {"Р”СѓРЅРґРёС‡Р° РћР»РµРєРѕ РїСЂРѕСЃРїРµРєС‚, 22", "РЅРµР°РєС‚РёРІРЅРёР№"},
+                {"РљРЅСЏР·СЏ Р РѕРјР°РЅР° РІСѓР»РёС†СЏ, 7", "Р°РєС‚РёРІРЅРёР№"},
+                {"РЎРѕР±РѕСЂРЅР° РІСѓР»РёС†СЏ, 151", "Р°РєС‚РёРІРЅРёР№"}
             },
             new String [] {
-                "Клієнт", "Стан"
+                "РљР»С–С”РЅС‚", "РЎС‚Р°РЅ"
             }
         ) {
             Class[] types = new Class [] {
@@ -152,10 +152,10 @@ public class ClientDetailsFrame extends javax.swing.JFrame {
             tableDohovory.getColumnModel().getColumn(0).setPreferredWidth(200);
         }
 
-        buttonDetailsDohovir.setText("Детальніше про договір...");
+        buttonDetailsDohovir.setText("Р”РµС‚Р°Р»СЊРЅС–С€Рµ РїСЂРѕ РґРѕРіРѕРІС–СЂ...");
         buttonDetailsDohovir.setName("buttonDetailsDohovir"); // NOI18N
 
-        buttonDetailsObject.setText("Детальніше про об'єкт...");
+        buttonDetailsObject.setText("Р”РµС‚Р°Р»СЊРЅС–С€Рµ РїСЂРѕ РѕР±'С”РєС‚...");
         buttonDetailsObject.setName("buttonDetailsObject"); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(panelDohovory);
@@ -190,7 +190,7 @@ public class ClientDetailsFrame extends javax.swing.JFrame {
 
         panelButtonOK.setName("panelButtonOK"); // NOI18N
 
-        buttonOK.setText("ОК");
+        buttonOK.setText("РћРљ");
         buttonOK.setName("buttonOK"); // NOI18N
         buttonOK.setPreferredSize(null);
         buttonOK.addActionListener(new java.awt.event.ActionListener() {
@@ -219,7 +219,7 @@ public class ClientDetailsFrame extends javax.swing.JFrame {
 
         panelButtonVidhylyty.setName("panelButtonVidhylyty"); // NOI18N
 
-        buttonVidhylyty.setText("Відхилити");
+        buttonVidhylyty.setText("Р’С–РґС…РёР»РёС‚Рё");
         buttonVidhylyty.setToolTipText("");
         buttonVidhylyty.setName("buttonVidhylyty"); // NOI18N
         buttonVidhylyty.setPreferredSize(null);

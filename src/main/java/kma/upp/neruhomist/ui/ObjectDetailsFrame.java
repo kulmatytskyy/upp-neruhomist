@@ -51,25 +51,25 @@ public class ObjectDetailsFrame extends javax.swing.JFrame {
         buttonDetailsVlasnyk = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("����� ��� ��'��� �45");
+        setTitle("Деталі про об'єкт №45");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelObject.setBorder(javax.swing.BorderFactory.createTitledBorder("��'���"));
+        panelObject.setBorder(javax.swing.BorderFactory.createTitledBorder("Об'єкт"));
         panelObject.setName("panelObject"); // NOI18N
 
-        labelVulytsia.setText("������");
+        labelVulytsia.setText("Вулиця");
         labelVulytsia.setName("labelVulytsia"); // NOI18N
 
-        labelBudynok.setText("�������");
+        labelBudynok.setText("Будинок");
         labelBudynok.setName("labelBudynok"); // NOI18N
 
-        labelKvartyra.setText("��������");
+        labelKvartyra.setText("Квартира");
         labelKvartyra.setName("labelKvartyra"); // NOI18N
 
-        labelTyp.setText("���");
+        labelTyp.setText("Тип");
         labelTyp.setName("labelTyp"); // NOI18N
 
-        labelVulytsia_value.setText("����� ������� ������");
+        labelVulytsia_value.setText("Олеко Дундича вулиця");
         labelVulytsia_value.setName("labelVulytsia_value"); // NOI18N
 
         labelBudynok_value.setText("22");
@@ -78,16 +78,16 @@ public class ObjectDetailsFrame extends javax.swing.JFrame {
         labelKvartyra_value.setText("13");
         labelKvartyra_value.setName("labelKvartyra_value"); // NOI18N
 
-        labelTyp_value.setText("��������");
+        labelTyp_value.setText("житловий");
         labelTyp_value.setName("labelTyp_value"); // NOI18N
 
-        labelKilkistKimnat.setText("ʳ������ �����");
+        labelKilkistKimnat.setText("Кількість кімнат");
         labelKilkistKimnat.setName("labelKilkistKimnat"); // NOI18N
 
         labelKilkistKimnat_value.setText("2");
         labelKilkistKimnat_value.setName("labelKilkistKimnat_value"); // NOI18N
 
-        labelPlata.setText("�����");
+        labelPlata.setText("Плата");
         labelPlata.setName("labelPlata"); // NOI18N
 
         labelPlata_value.setText("6600");
@@ -152,18 +152,18 @@ public class ObjectDetailsFrame extends javax.swing.JFrame {
 
         getContentPane().add(panelObject, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 3, 400, 150));
 
-        panelDohovory.setBorder(javax.swing.BorderFactory.createTitledBorder("��������"));
+        panelDohovory.setBorder(javax.swing.BorderFactory.createTitledBorder("Договори"));
         panelDohovory.setName("panelDohovory"); // NOI18N
 
         tableDohovory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"��������� ����� �����������", "��������"},
-                {"������ ˺��", "����������"},
-                {"����� ������", "��������"},
-                {"����� ������", "��������"}
+                {"Глибовець Андрій Миколайович", "активний"},
+                {"Джаред Лєто", "неактивний"},
+                {"Кемба Уолкер", "активний"},
+                {"Марло Брандо", "активний"}
             },
             new String [] {
-                "�볺��", "����"
+                "Клієнт", "Стан"
             }
         ) {
             Class[] types = new Class [] {
@@ -180,10 +180,10 @@ public class ObjectDetailsFrame extends javax.swing.JFrame {
             tableDohovory.getColumnModel().getColumn(0).setPreferredWidth(200);
         }
 
-        buttonDetailsDohovir.setText("��������� ��� ������...");
+        buttonDetailsDohovir.setText("Детальніше про договір...");
         buttonDetailsDohovir.setName("buttonDetailsDohovir"); // NOI18N
 
-        buttonDetailsClient.setText("��������� ��� �볺���...");
+        buttonDetailsClient.setText("Детальніше про клієнта...");
         buttonDetailsClient.setName("buttonDetailsClient"); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(panelDohovory);
@@ -218,7 +218,7 @@ public class ObjectDetailsFrame extends javax.swing.JFrame {
 
         panelButtonOK.setName("panelButtonOK"); // NOI18N
 
-        buttonOK.setText("��");
+        buttonOK.setText("ОК");
         buttonOK.setName("buttonOK"); // NOI18N
         buttonOK.setPreferredSize(null);
         buttonOK.addActionListener(new java.awt.event.ActionListener() {
@@ -247,7 +247,7 @@ public class ObjectDetailsFrame extends javax.swing.JFrame {
 
         panelButtonVidhylyty.setName("panelButtonVidhylyty"); // NOI18N
 
-        buttonVidhylyty.setText("³�������");
+        buttonVidhylyty.setText("Відхилити");
         buttonVidhylyty.setToolTipText("");
         buttonVidhylyty.setName("buttonVidhylyty"); // NOI18N
         buttonVidhylyty.setPreferredSize(null);
@@ -277,19 +277,19 @@ public class ObjectDetailsFrame extends javax.swing.JFrame {
 
         getContentPane().add(panelButtons, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 400, 40));
 
-        panelVlasnyk.setBorder(javax.swing.BorderFactory.createTitledBorder("�������"));
+        panelVlasnyk.setBorder(javax.swing.BorderFactory.createTitledBorder("Власник"));
         panelVlasnyk.setName("panelVlasnyk"); // NOI18N
 
-        labelVlasnyk.setText("����� �������");
+        labelVlasnyk.setText("Майкл Джордан");
         labelVlasnyk.setName("labelVlasnyk"); // NOI18N
 
-        labelTelefon.setText("�������");
+        labelTelefon.setText("Телефон");
         labelTelefon.setName("labelTelefon"); // NOI18N
 
         labelTelefon_value.setText("0447777777");
         labelTelefon_value.setName("labelTelefon_value"); // NOI18N
 
-        buttonDetailsVlasnyk.setText("��������� ��� ��������...");
+        buttonDetailsVlasnyk.setText("Детальніше про власника...");
         buttonDetailsVlasnyk.setName("buttonDetailsVlasnyk"); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(panelVlasnyk);

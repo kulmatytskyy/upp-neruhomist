@@ -35,22 +35,22 @@ public class MenuFrame extends javax.swing.JFrame {
         buttonVyhid = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("������� ����");
+        setTitle("Головне меню");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelDodaty.setBorder(javax.swing.BorderFactory.createTitledBorder("������"));
+        panelDodaty.setBorder(javax.swing.BorderFactory.createTitledBorder("Додати"));
         panelDodaty.setName("panelDodaty"); // NOI18N
 
-        buttonDodatyObject.setText("������ ��'���");
+        buttonDodatyObject.setText("Додати об'єкт");
         buttonDodatyObject.setName("buttonDodatyObject"); // NOI18N
 
-        buttonDodatyVlasnyka.setText("������ ��������");
+        buttonDodatyVlasnyka.setText("Додати власника");
         buttonDodatyVlasnyka.setName("buttonDodatyVlasnyka"); // NOI18N
 
-        buttonDodatyClienta.setText("������ �볺���");
+        buttonDodatyClienta.setText("Додати клієнта");
         buttonDodatyClienta.setName("buttonDodatyClienta"); // NOI18N
 
-        buttonDodatySpivrobitnyka.setText("������ �����������");
+        buttonDodatySpivrobitnyka.setText("Додати співробітника");
         buttonDodatySpivrobitnyka.setName("buttonDodatySpivrobitnyka"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(panelDodaty);
@@ -82,13 +82,13 @@ public class MenuFrame extends javax.swing.JFrame {
 
         getContentPane().add(panelDodaty, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 180));
 
-        panelPerehlyanuty.setBorder(javax.swing.BorderFactory.createTitledBorder("�����������"));
+        panelPerehlyanuty.setBorder(javax.swing.BorderFactory.createTitledBorder("Переглянути"));
         panelPerehlyanuty.setName("panelPerehlyanuty"); // NOI18N
 
-        buttonStatystyka.setText("����������");
+        buttonStatystyka.setText("Статистика");
         buttonStatystyka.setName("buttonStatystyka"); // NOI18N
 
-        buttonArchive.setText("�����");
+        buttonArchive.setText("Архів");
         buttonArchive.setName("buttonArchive"); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(panelPerehlyanuty);
@@ -114,10 +114,10 @@ public class MenuFrame extends javax.swing.JFrame {
 
         getContentPane().add(panelPerehlyanuty, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 170, 110));
 
-        panelPoshuk.setBorder(javax.swing.BorderFactory.createTitledBorder("�����"));
+        panelPoshuk.setBorder(javax.swing.BorderFactory.createTitledBorder("Пошук"));
         panelPoshuk.setName("panelPoshuk"); // NOI18N
 
-        buttonPoshuk.setText("�����");
+        buttonPoshuk.setText("Пошук");
         buttonPoshuk.setName("buttonPoshuk"); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(panelPoshuk);
@@ -141,7 +141,7 @@ public class MenuFrame extends javax.swing.JFrame {
 
         panelVyhid.setName("pPanelVyhid"); // NOI18N
 
-        buttonVyhid.setText("�����");
+        buttonVyhid.setText("Вихід");
         buttonVyhid.setName("buttonVyhid"); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(panelVyhid);

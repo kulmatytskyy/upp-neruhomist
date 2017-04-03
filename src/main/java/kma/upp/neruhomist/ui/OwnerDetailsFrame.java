@@ -42,37 +42,37 @@ public class OwnerDetailsFrame extends javax.swing.JFrame {
         buttonVidhylyty = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("����� ��� �������� �89");
+        setTitle("Деталі про власника №89");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelOwner.setBorder(javax.swing.BorderFactory.createTitledBorder("�������"));
+        panelOwner.setBorder(javax.swing.BorderFactory.createTitledBorder("Власник"));
         panelOwner.setName("panelOwner"); // NOI18N
 
-        labelClient.setText("������ �������");
+        labelClient.setText("Шарлот Хорнетс");
         labelClient.setName("labelClient"); // NOI18N
 
-        labelTelefon.setText("�������");
+        labelTelefon.setText("Телефон");
         labelTelefon.setName("labelTelefon"); // NOI18N
 
-        labelTypOsoby.setText("��� �����");
+        labelTypOsoby.setText("Тип особи");
         labelTypOsoby.setName("labelTypOsoby"); // NOI18N
 
-        labelTypBiznesu.setText("��� ������");
+        labelTypBiznesu.setText("Тип бізнесу");
         labelTypBiznesu.setName("labelTypBiznesu"); // NOI18N
 
-        labelContactneImya.setText("��������� ��'�");
+        labelContactneImya.setText("Контактне ім'я");
         labelContactneImya.setName("labelContactneImya"); // NOI18N
 
         labelTelefon_value.setText("0447777777");
         labelTelefon_value.setName("labelTelefon_value"); // NOI18N
 
-        labelTypOsoby_value.setText("��������");
+        labelTypOsoby_value.setText("юридична");
         labelTypOsoby_value.setName("labelTypOsoby_value"); // NOI18N
 
-        labelTypBiznesu_value.setText("����������� ������������ ���������");
+        labelTypBiznesu_value.setText("Національна баскетбольна асоціація");
         labelTypBiznesu_value.setName("labelTypBiznesu_value"); // NOI18N
 
-        labelContactneImya_value.setText("��� �������");
+        labelContactneImya_value.setText("Стів Кліффорд");
         labelContactneImya_value.setName("labelContactneImya_value"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(panelOwner);
@@ -122,18 +122,18 @@ public class OwnerDetailsFrame extends javax.swing.JFrame {
 
         getContentPane().add(panelOwner, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 3, 400, 140));
 
-        panelObjects.setBorder(javax.swing.BorderFactory.createTitledBorder("��'����"));
+        panelObjects.setBorder(javax.swing.BorderFactory.createTitledBorder("Об'єкти"));
         panelObjects.setName("panelObjects"); // NOI18N
 
         tableObjects.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"��������� ������, 35", "��������", "2", "8000"},
-                {"������� ����� ��������, 22", "��������", "3", "12200"},
-                {"����� ������ ������, 7", "����������", "1", "2500"},
-                {"������� ������, 151", "��������", "2", "9800"}
+                {"Дубенська вулиця, 35", "житловий", "2", "8000"},
+                {"Дундича Олеко проспект, 22", "житловий", "3", "12200"},
+                {"Князя Романа вулиця, 7", "нежитловий", "1", "2500"},
+                {"Соборна вулиця, 151", "житловий", "2", "9800"}
             },
             new String [] {
-                "������", "���", "ʳ����", "ֳ��"
+                "Адреса", "Тип", "Кімнат", "Ціна"
             }
         ) {
             Class[] types = new Class [] {
@@ -151,7 +151,7 @@ public class OwnerDetailsFrame extends javax.swing.JFrame {
             tableObjects.getColumnModel().getColumn(2).setPreferredWidth(50);
         }
 
-        buttonDetailsObject.setText("��������� ��� ��'���...");
+        buttonDetailsObject.setText("Детальніше про об'єкт...");
         buttonDetailsObject.setName("buttonDetailsObject"); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(panelObjects);
@@ -181,7 +181,7 @@ public class OwnerDetailsFrame extends javax.swing.JFrame {
 
         panelButtonOK.setName("panelButtonOK"); // NOI18N
 
-        buttonOK.setText("��");
+        buttonOK.setText("ОК");
         buttonOK.setName("buttonOK"); // NOI18N
         buttonOK.setPreferredSize(null);
         buttonOK.addActionListener(new java.awt.event.ActionListener() {
@@ -210,7 +210,7 @@ public class OwnerDetailsFrame extends javax.swing.JFrame {
 
         panelButtonVidhylyty.setName("panelButtonVidhylyty"); // NOI18N
 
-        buttonVidhylyty.setText("³�������");
+        buttonVidhylyty.setText("Відхилити");
         buttonVidhylyty.setToolTipText("");
         buttonVidhylyty.setName("buttonVidhylyty"); // NOI18N
         buttonVidhylyty.setPreferredSize(null);

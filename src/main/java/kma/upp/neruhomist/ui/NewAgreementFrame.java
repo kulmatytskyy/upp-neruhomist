@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 
 @Component
 public class NewAgreementFrame extends JFrame {
+
 	private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JButton buttonDetailsClient;
@@ -85,37 +86,37 @@ public class NewAgreementFrame extends JFrame {
         buttonVidhylyty = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("����� ������");
+        setTitle("Новий договір");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelClient.setBorder(javax.swing.BorderFactory.createTitledBorder("�볺��"));
+        panelClient.setBorder(javax.swing.BorderFactory.createTitledBorder("Клієнт"));
         panelClient.setName("panelClient"); // NOI18N
 
         buttonGroup2.add(radiobuttonClientNovy);
-        radiobuttonClientNovy.setText("�����");
+        radiobuttonClientNovy.setText("Новий");
         radiobuttonClientNovy.setName("radiobuttonClientNovy"); // NOI18N
 
         buttonGroup2.add(radiobuttonClientIsnuuchyi);
         radiobuttonClientIsnuuchyi.setSelected(true);
-        radiobuttonClientIsnuuchyi.setText("��������");
+        radiobuttonClientIsnuuchyi.setText("Існуючий");
         radiobuttonClientIsnuuchyi.setName("radiobuttonClientIsnuuchyi"); // NOI18N
 
-        labelClientTelefon.setText("�������:");
+        labelClientTelefon.setText("Телефон:");
         labelClientTelefon.setName("labelClientTelefon"); // NOI18N
 
-        labelClientImya.setText("�볺��:");
+        labelClientImya.setText("Клієнт:");
         labelClientImya.setName("labelClientImya"); // NOI18N
 
-        labelClientImya_value.setText("��������� ����� �����������");
+        labelClientImya_value.setText("Глибовець Андрій Миколайович");
         labelClientImya_value.setName("labelClientImya_value"); // NOI18N
 
         labelClientTelefon_value.setText("0449379992");
 
-        buttonDetailsClient.setText("��������� ��� �볺���...");
+        buttonDetailsClient.setText("Детальніше про клієнта...");
         buttonDetailsClient.setName("buttonDetailsClient"); // NOI18N
 
-        buttonNovyClient.setText("������ ������ �볺���...");
+        buttonNovyClient.setText("Додати нового клієнта...");
         buttonNovyClient.setName("buttonNovyClient"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(panelClient);
@@ -165,33 +166,33 @@ public class NewAgreementFrame extends JFrame {
 
         getContentPane().add(panelClient, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 480, -1));
 
-        panelSpivrobitnyk.setBorder(javax.swing.BorderFactory.createTitledBorder("����������"));
+        panelSpivrobitnyk.setBorder(javax.swing.BorderFactory.createTitledBorder("Співробітник"));
         panelSpivrobitnyk.setName("panelSpivrobitnyk"); // NOI18N
 
         buttonGroup1.add(radiobuttonSpivrobitnykNovy);
-        radiobuttonSpivrobitnykNovy.setText("�����");
+        radiobuttonSpivrobitnykNovy.setText("Новий");
         radiobuttonSpivrobitnykNovy.setName("radiobuttonSpivrobitnykNovy"); // NOI18N
 
         buttonGroup1.add(radiobuttonSpivrobitnykIsnuuchyi);
         radiobuttonSpivrobitnykIsnuuchyi.setSelected(true);
-        radiobuttonSpivrobitnykIsnuuchyi.setText("��������");
+        radiobuttonSpivrobitnykIsnuuchyi.setText("Існуючий");
         radiobuttonSpivrobitnykIsnuuchyi.setName("radiobuttonSpivrobitnykIsnuuchyi"); // NOI18N
 
-        labelSpivrobitnykImya.setText("����������:");
+        labelSpivrobitnykImya.setText("Співробітник:");
         labelSpivrobitnykImya.setName("labelSpivrobitnykImya"); // NOI18N
 
-        buttonDetailsSpivrobitnyk.setText("��������� ��� �����������...");
+        buttonDetailsSpivrobitnyk.setText("Детальніше про співробітника...");
         buttonDetailsSpivrobitnyk.setName("buttonDetailsSpivrobitnyk"); // NOI18N
 
-        labelSpivrobitnykImya_value.setText("����� ���������");
+        labelSpivrobitnykImya_value.setText("Джейк Джиллєнхол");
         labelSpivrobitnykImya_value.setName("labelSpivrobitnykImya_value"); // NOI18N
 
         labelSpivrobitnykTelefon_value.setText("0631234567");
 
-        labelSpivrobitnykTelefon.setText("�������:");
+        labelSpivrobitnykTelefon.setText("Телефон:");
         labelSpivrobitnykTelefon.setName("labelSpivrobitnykTelefon"); // NOI18N
 
-        buttonNovySpivrobitnyk.setText("������ ������ �����������...");
+        buttonNovySpivrobitnyk.setText("Додати нового співробітника...");
         buttonNovySpivrobitnyk.setName("buttonNovySpivrobitnyk"); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(panelSpivrobitnyk);
@@ -243,31 +244,31 @@ public class NewAgreementFrame extends JFrame {
 
         getContentPane().add(panelSpivrobitnyk, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 480, 170));
 
-        panelObject.setBorder(javax.swing.BorderFactory.createTitledBorder("��'���"));
+        panelObject.setBorder(javax.swing.BorderFactory.createTitledBorder("Об'єкт"));
         panelObject.setName("panelObject"); // NOI18N
 
-        labelObjectAdresa.setText("������:");
+        labelObjectAdresa.setText("Адреса:");
         labelObjectAdresa.setName("labelObjectAdresa"); // NOI18N
 
-        labelObjectKimnat.setText("ʳ����:");
+        labelObjectKimnat.setText("Кімнат:");
         labelObjectKimnat.setName("labelObjectKimnat"); // NOI18N
 
-        labelObjectTyp.setText("���:");
+        labelObjectTyp.setText("Тип:");
         labelObjectTyp.setName("labelObjectTyp"); // NOI18N
 
-        labelObjectPlata.setText("�����:");
+        labelObjectPlata.setText("Плата:");
         labelObjectPlata.setName("labelObjectPlata"); // NOI18N
 
-        buttonDetailsObject.setText("��������� ��� ��'���...");
+        buttonDetailsObject.setText("Детальніше про об'єкт...");
         buttonDetailsObject.setName("buttonDetailsObject"); // NOI18N
 
-        labelObjectAdresa_value.setText("����� ������� ��������, ���.22, ��.13");
+        labelObjectAdresa_value.setText("Олеко Дундича проспект, буд.22, кв.13");
         labelObjectAdresa_value.setName("labelObjectAdresa_value"); // NOI18N
 
         labelObjectKimnat_value.setText("2");
         labelObjectKimnat_value.setName("labelObjectKimnat_value"); // NOI18N
 
-        labelObjectTyp_value.setText("��������");
+        labelObjectTyp_value.setText("житловий");
         labelObjectTyp_value.setToolTipText("");
         labelObjectTyp_value.setName("labelObjectTyp_value"); // NOI18N
 
@@ -340,7 +341,7 @@ public class NewAgreementFrame extends JFrame {
 
         panelButtonOK.setName("panelButtonOK"); // NOI18N
 
-        buttonOK.setText("��");
+        buttonOK.setText("ОК");
         buttonOK.setName("buttonOK"); // NOI18N
         buttonOK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -368,7 +369,7 @@ public class NewAgreementFrame extends JFrame {
 
         panelButtonVidhylyty.setName("panelButtonVidhylyty"); // NOI18N
 
-        buttonVidhylyty.setText("³�������");
+        buttonVidhylyty.setText("Відхилити");
         buttonVidhylyty.setToolTipText("");
         buttonVidhylyty.setName("buttonVidhylyty"); // NOI18N
         buttonVidhylyty.addActionListener(new java.awt.event.ActionListener() {

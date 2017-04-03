@@ -42,23 +42,23 @@ public class ArchiveFrame extends javax.swing.JFrame {
         buttonNazad = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Архів зданих об'єктів");
+        setTitle("РђСЂС…С–РІ Р·РґР°РЅРёС… РѕР±'С”РєС‚С–РІ");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelTypPrymischennya.setBorder(javax.swing.BorderFactory.createTitledBorder("Тип приміщення"));
+        panelTypPrymischennya.setBorder(javax.swing.BorderFactory.createTitledBorder("РўРёРї РїСЂРёРјС–С‰РµРЅРЅСЏ"));
         panelTypPrymischennya.setName("panelTypPrymischennya"); // NOI18N
 
         buttonGroup1.add(radiobuttonZhytlovy);
-        radiobuttonZhytlovy.setText("Житловий");
+        radiobuttonZhytlovy.setText("Р–РёС‚Р»РѕРІРёР№");
         radiobuttonZhytlovy.setName("radiobuttonZhytlovy"); // NOI18N
 
         buttonGroup1.add(radiobuttonNeZhytlovy);
-        radiobuttonNeZhytlovy.setText("Нежитловий");
+        radiobuttonNeZhytlovy.setText("РќРµР¶РёС‚Р»РѕРІРёР№");
         radiobuttonNeZhytlovy.setName("radiobuttonNeZhytlovy"); // NOI18N
 
         buttonGroup1.add(radiobuttonTypAny);
         radiobuttonTypAny.setSelected(true);
-        radiobuttonTypAny.setText("Будь-який");
+        radiobuttonTypAny.setText("Р‘СѓРґСЊ-СЏРєРёР№");
         radiobuttonTypAny.setName("radiobuttonTypAny"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(panelTypPrymischennya);
@@ -89,20 +89,20 @@ public class ArchiveFrame extends javax.swing.JFrame {
 
         getContentPane().add(panelTypPrymischennya, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 90));
 
-        panelStanDohovoru.setBorder(javax.swing.BorderFactory.createTitledBorder("Стан договору"));
+        panelStanDohovoru.setBorder(javax.swing.BorderFactory.createTitledBorder("РЎС‚Р°РЅ РґРѕРіРѕРІРѕСЂСѓ"));
         panelStanDohovoru.setName("panelStanDohovoru"); // NOI18N
 
         buttonGroup2.add(radiobuttonActyvny);
-        radiobuttonActyvny.setText("Активний");
+        radiobuttonActyvny.setText("РђРєС‚РёРІРЅРёР№");
         radiobuttonActyvny.setName("radiobuttonActyvny"); // NOI18N
 
         buttonGroup2.add(radiobuttonNeAktyvny);
-        radiobuttonNeAktyvny.setText("Неактивний");
+        radiobuttonNeAktyvny.setText("РќРµР°РєС‚РёРІРЅРёР№");
         radiobuttonNeAktyvny.setName("radiobuttonNeAktyvny"); // NOI18N
 
         buttonGroup2.add(radiobuttonStanAny);
         radiobuttonStanAny.setSelected(true);
-        radiobuttonStanAny.setText("Будь-який");
+        radiobuttonStanAny.setText("Р‘СѓРґСЊ-СЏРєРёР№");
         radiobuttonStanAny.setName("radiobuttonStanAny"); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(panelStanDohovoru);
@@ -133,18 +133,18 @@ public class ArchiveFrame extends javax.swing.JFrame {
 
         getContentPane().add(panelStanDohovoru, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 200, 100));
 
-        panelRezultatyPoshuku.setBorder(javax.swing.BorderFactory.createTitledBorder("Результати пошуку"));
+        panelRezultatyPoshuku.setBorder(javax.swing.BorderFactory.createTitledBorder("Р РµР·СѓР»СЊС‚Р°С‚Рё РїРѕС€СѓРєСѓ"));
         panelRezultatyPoshuku.setName("panelRezultatyPoshuku"); // NOI18N
 
         tableResultaty.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Льонокомбінатівська вулиця, 1", "житловий", "неактивний", "12.01.2017"},
-                {"Хмельницького Богдана бульвар, 18", "житловий", "активний", "15.03.2017"},
-                {"Шухевича Романа вулиця, 14", "нежитловий", "неактивний", "31.01.2017"},
+                {"Р›СЊРѕРЅРѕРєРѕРјР±С–РЅР°С‚С–РІСЃСЊРєР° РІСѓР»РёС†СЏ, 1", "Р¶РёС‚Р»РѕРІРёР№", "РЅРµР°РєС‚РёРІРЅРёР№", "12.01.2017"},
+                {"РҐРјРµР»СЊРЅРёС†СЊРєРѕРіРѕ Р‘РѕРіРґР°РЅР° Р±СѓР»СЊРІР°СЂ, 18", "Р¶РёС‚Р»РѕРІРёР№", "Р°РєС‚РёРІРЅРёР№", "15.03.2017"},
+                {"РЁСѓС…РµРІРёС‡Р° Р РѕРјР°РЅР° РІСѓР»РёС†СЏ, 14", "РЅРµР¶РёС‚Р»РѕРІРёР№", "РЅРµР°РєС‚РёРІРЅРёР№", "31.01.2017"},
                 {null, null, null, null}
             },
             new String [] {
-                "Адреса", "Тип", "Стан", "Договір дійсний до"
+                "РђРґСЂРµСЃР°", "РўРёРї", "РЎС‚Р°РЅ", "Р”РѕРіРѕРІС–СЂ РґС–Р№СЃРЅРёР№ РґРѕ"
             }
         ) {
             Class[] types = new Class [] {
@@ -165,13 +165,13 @@ public class ArchiveFrame extends javax.swing.JFrame {
             tableResultaty.getColumnModel().getColumn(3).setPreferredWidth(80);
         }
 
-        buttonDetaliObject.setText("Детальніше про об'єкт...");
+        buttonDetaliObject.setText("Р”РµС‚Р°Р»СЊРЅС–С€Рµ РїСЂРѕ РѕР±'С”РєС‚...");
         buttonDetaliObject.setName("buttonDetaliObject"); // NOI18N
 
-        buttonDetaliVlasnyka.setText("Детальніше про власника...");
+        buttonDetaliVlasnyka.setText("Р”РµС‚Р°Р»СЊРЅС–С€Рµ РїСЂРѕ РІР»Р°СЃРЅРёРєР°...");
         buttonDetaliVlasnyka.setName("buttonDetaliVlasnyka"); // NOI18N
 
-        buttonDetaliDohovoru.setText("Детальніше про договір...");
+        buttonDetaliDohovoru.setText("Р”РµС‚Р°Р»СЊРЅС–С€Рµ РїСЂРѕ РґРѕРіРѕРІС–СЂ...");
         buttonDetaliDohovoru.setName("buttonDetaliDohovoru"); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(panelRezultatyPoshuku);
@@ -200,13 +200,13 @@ public class ArchiveFrame extends javax.swing.JFrame {
 
         getContentPane().add(panelRezultatyPoshuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 520, 270));
 
-        buttonPoshuk.setText("Пошук");
+        buttonPoshuk.setText("РџРѕС€СѓРє");
         buttonPoshuk.setName("buttonPoshuk"); // NOI18N
         getContentPane().add(buttonPoshuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 223, 180, 40));
 
         panelNazad.setName("panelNazad"); // NOI18N
 
-        buttonNazad.setText("Назад до головного меню");
+        buttonNazad.setText("РќР°Р·Р°Рґ РґРѕ РіРѕР»РѕРІРЅРѕРіРѕ РјРµРЅСЋ");
         buttonNazad.setName("buttonNazad"); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(panelNazad);

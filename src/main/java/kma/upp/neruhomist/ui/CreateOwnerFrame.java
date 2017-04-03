@@ -66,38 +66,38 @@ public class CreateOwnerFrame extends JFrame {
         buttonVidhylyty = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Додати власника");
+        setTitle("Р”РѕРґР°С‚Рё РІР»Р°СЃРЅРёРєР°");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelTypOsoby.setBorder(javax.swing.BorderFactory.createTitledBorder("Тип особи"));
+        panelTypOsoby.setBorder(javax.swing.BorderFactory.createTitledBorder("РўРёРї РѕСЃРѕР±Рё"));
         panelTypOsoby.setName("panelTypOsoby"); // NOI18N
 
         buttonGroup2.add(radiobuttonYurydychna);
-        radiobuttonYurydychna.setText("Юридична");
+        radiobuttonYurydychna.setText("Р®СЂРёРґРёС‡РЅР°");
         radiobuttonYurydychna.setName("radiobuttonYurydychna"); // NOI18N
 
         buttonGroup2.add(radiobuttonFizychna);
         radiobuttonFizychna.setSelected(true);
-        radiobuttonFizychna.setText("Фізична");
+        radiobuttonFizychna.setText("Р¤С–Р·РёС‡РЅР°");
         radiobuttonFizychna.setName("radiobuttonFizychna"); // NOI18N
 
-        labelYurydychnaNazva.setText("Назва");
+        labelYurydychnaNazva.setText("РќР°Р·РІР°");
         labelYurydychnaNazva.setName("labelYurydychnaNazva"); // NOI18N
 
-        labelYurydychnaTypBiznesu.setText("Тип бізнесу");
+        labelYurydychnaTypBiznesu.setText("РўРёРї Р±С–Р·РЅРµСЃСѓ");
         labelYurydychnaTypBiznesu.setName("labelYurydychnaTypBiznesu"); // NOI18N
 
-        labelYurydychnaContactneImya.setText("Контактне ім'я");
+        labelYurydychnaContactneImya.setText("РљРѕРЅС‚Р°РєС‚РЅРµ С–Рј'СЏ");
         labelYurydychnaContactneImya.setName("labelYurydychnaContactneImya"); // NOI18N
 
-        labelFizychnaPrizvysche.setText("Прізвище");
+        labelFizychnaPrizvysche.setText("РџСЂС–Р·РІРёС‰Рµ");
         labelFizychnaPrizvysche.setName("labelFizychnaPrizvysche"); // NOI18N
 
-        labelFizychnaImya.setText("Ім'я");
+        labelFizychnaImya.setText("Р†Рј'СЏ");
         labelFizychnaImya.setName("labelFizychnaImya"); // NOI18N
 
-        labelFizychnaPoBatkovi.setText("По батькові");
+        labelFizychnaPoBatkovi.setText("РџРѕ Р±Р°С‚СЊРєРѕРІС–");
         labelFizychnaPoBatkovi.setName("labelFizychnaPoBatkovi"); // NOI18N
 
         textfieldYurydychnaImya.setName("textfieldYurydychnaImya"); // NOI18N
@@ -184,7 +184,7 @@ public class CreateOwnerFrame extends JFrame {
 
         getContentPane().add(panelTypOsoby, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 160));
 
-        panelTelefon.setBorder(javax.swing.BorderFactory.createTitledBorder("Телефон"));
+        panelTelefon.setBorder(javax.swing.BorderFactory.createTitledBorder("РўРµР»РµС„РѕРЅ"));
         panelTelefon.setName("panelTelefon"); // NOI18N
 
         textfieldTelefonOne.setName("textfieldTelefonOne"); // NOI18N
@@ -220,7 +220,7 @@ public class CreateOwnerFrame extends JFrame {
 
         panelButtonOK.setName("panelButtonOK"); // NOI18N
 
-        buttonOK.setText("ОК");
+        buttonOK.setText("РћРљ");
         buttonOK.setName("buttonOK"); // NOI18N
         buttonOK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -248,7 +248,7 @@ public class CreateOwnerFrame extends JFrame {
 
         panelButtonVidhylyty.setName("panelButtonVidhylyty"); // NOI18N
 
-        buttonVidhylyty.setText("Відхилити");
+        buttonVidhylyty.setText("Р’С–РґС…РёР»РёС‚Рё");
         buttonVidhylyty.setToolTipText("");
         buttonVidhylyty.setName("buttonVidhylyty"); // NOI18N
         buttonVidhylyty.addActionListener(new java.awt.event.ActionListener() {

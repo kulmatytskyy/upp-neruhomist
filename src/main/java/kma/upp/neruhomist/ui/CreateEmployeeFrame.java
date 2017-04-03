@@ -50,25 +50,25 @@ public class CreateEmployeeFrame extends JFrame {
         buttonVidhylyty = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Додати співробітника");
+        setTitle("Р”РѕРґР°С‚Рё СЃРїС–РІСЂРѕР±С–С‚РЅРёРєР°");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         
 
-        panelImya.setBorder(javax.swing.BorderFactory.createTitledBorder("Ім'я"));
+        panelImya.setBorder(javax.swing.BorderFactory.createTitledBorder("Р†Рј'СЏ"));
         panelImya.setName("panelImya"); // NOI18N
 
         textfieldPoBatkovi.setName("textfieldPoBatkovi"); // NOI18N
 
         textfieldImya.setName("textfieldImya"); // NOI18N
 
-        labelImya.setText("Ім'я");
+        labelImya.setText("Р†Рј'СЏ");
         labelImya.setName("labelImya"); // NOI18N
 
-        labelPrizvysche.setText("Прізвище");
+        labelPrizvysche.setText("РџСЂС–Р·РІРёС‰Рµ");
         labelPrizvysche.setName("labelPrizvysche"); // NOI18N
 
-        labelPoBatkovi.setText("По батькові");
+        labelPoBatkovi.setText("РџРѕ Р±Р°С‚СЊРєРѕРІС–");
         labelPoBatkovi.setName("labelPoBatkovi"); // NOI18N
 
         textfieldPrizvysche.setName("textfieldPrizvysche"); // NOI18N
@@ -108,7 +108,7 @@ public class CreateEmployeeFrame extends JFrame {
 
         getContentPane().add(panelImya, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 60));
 
-        panelPosada.setBorder(javax.swing.BorderFactory.createTitledBorder("Посада"));
+        panelPosada.setBorder(javax.swing.BorderFactory.createTitledBorder("РџРѕСЃР°РґР°"));
         panelPosada.setName("panelPosada"); // NOI18N
 
         textfieldPosada.setName("textfieldPosada"); // NOI18N
@@ -132,7 +132,7 @@ public class CreateEmployeeFrame extends JFrame {
 
         getContentPane().add(panelPosada, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 190, 60));
 
-        panelTelefon.setBorder(javax.swing.BorderFactory.createTitledBorder("Телефон"));
+        panelTelefon.setBorder(javax.swing.BorderFactory.createTitledBorder("РўРµР»РµС„РѕРЅ"));
         panelTelefon.setName("panelTelefon"); // NOI18N
 
         textfieldTelefonOne.setName("textfieldTelefonOne"); // NOI18N
@@ -166,7 +166,7 @@ public class CreateEmployeeFrame extends JFrame {
 
         panelButtonOK.setName("panelButtonOK"); // NOI18N
 
-        buttonOK.setText("ОК");
+        buttonOK.setText("РћРљ");
         buttonOK.setName("buttonOK"); // NOI18N
         buttonOK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,7 +192,7 @@ public class CreateEmployeeFrame extends JFrame {
 
         panelButtonVidhylyty.setName("panelButtonVidhylyty"); // NOI18N
 
-        buttonVidhylyty.setText("Відхилити");
+        buttonVidhylyty.setText("Р’С–РґС…РёР»РёС‚Рё");
         buttonVidhylyty.setToolTipText("");
         buttonVidhylyty.setName("buttonVidhylyty"); // NOI18N
         buttonVidhylyty.addActionListener(new java.awt.event.ActionListener() {

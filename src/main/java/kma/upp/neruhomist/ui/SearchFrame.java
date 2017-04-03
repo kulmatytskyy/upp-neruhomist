@@ -44,19 +44,19 @@ public class SearchFrame extends javax.swing.JFrame {
         labelVulytsia = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Пошук");
+        setTitle("РџРѕС€СѓРє");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelTypPrymischennya.setBorder(javax.swing.BorderFactory.createTitledBorder("Тип бажаного приміщення"));
+        panelTypPrymischennya.setBorder(javax.swing.BorderFactory.createTitledBorder("РўРёРї Р±Р°Р¶Р°РЅРѕРіРѕ РїСЂРёРјС–С‰РµРЅРЅСЏ"));
         panelTypPrymischennya.setName("panelTypPrymischennya"); // NOI18N
 
         buttonGroup1.add(radiobuttonZhytlovy);
         radiobuttonZhytlovy.setSelected(true);
-        radiobuttonZhytlovy.setText("Житловий");
+        radiobuttonZhytlovy.setText("Р–РёС‚Р»РѕРІРёР№");
         radiobuttonZhytlovy.setName("radiobuttonZhytlovy"); // NOI18N
 
         buttonGroup1.add(radiobuttonNeZhytlovy);
-        radiobuttonNeZhytlovy.setText("Нежитловий");
+        radiobuttonNeZhytlovy.setText("РќРµР¶РёС‚Р»РѕРІРёР№");
         radiobuttonNeZhytlovy.setName("radiobuttonNeZhytlovy"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(panelTypPrymischennya);
@@ -81,7 +81,7 @@ public class SearchFrame extends javax.swing.JFrame {
 
         getContentPane().add(panelTypPrymischennya, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 80));
 
-        panelStanDohovoru.setBorder(javax.swing.BorderFactory.createTitledBorder("Кількість кімнат"));
+        panelStanDohovoru.setBorder(javax.swing.BorderFactory.createTitledBorder("РљС–Р»СЊРєС–СЃС‚СЊ РєС–РјРЅР°С‚"));
         panelStanDohovoru.setName("panelStanDohovoru"); // NOI18N
 
         dropdownKilkistKimnat.setEditable(true);
@@ -111,18 +111,18 @@ public class SearchFrame extends javax.swing.JFrame {
 
         getContentPane().add(panelStanDohovoru, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 200, 50));
 
-        panelRezultatyPoshuku.setBorder(javax.swing.BorderFactory.createTitledBorder("Результати пошуку"));
+        panelRezultatyPoshuku.setBorder(javax.swing.BorderFactory.createTitledBorder("Р РµР·СѓР»СЊС‚Р°С‚Рё РїРѕС€СѓРєСѓ"));
         panelRezultatyPoshuku.setName("panelRezultatyPoshuku"); // NOI18N
 
         tableResultaty.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Дубенська вулиця, 35", "4250"},
-                {"Дундича Олеко проспект, 22", "5000"},
-                {"Князя Романа вулиця, 7", "3700"},
-                {"Соборна вулиця, 151", null}
+                {"Р”СѓР±РµРЅСЃСЊРєР° РІСѓР»РёС†СЏ, 35", "4250"},
+                {"Р”СѓРЅРґРёС‡Р° РћР»РµРєРѕ РїСЂРѕСЃРїРµРєС‚, 22", "5000"},
+                {"РљРЅСЏР·СЏ Р РѕРјР°РЅР° РІСѓР»РёС†СЏ, 7", "3700"},
+                {"РЎРѕР±РѕСЂРЅР° РІСѓР»РёС†СЏ, 151", null}
             },
             new String [] {
-                "Адреса", "Ціна"
+                "РђРґСЂРµСЃР°", "Р¦С–РЅР°"
             }
         ) {
             Class[] types = new Class [] {
@@ -141,13 +141,13 @@ public class SearchFrame extends javax.swing.JFrame {
             tableResultaty.getColumnModel().getColumn(1).setPreferredWidth(50);
         }
 
-        buttonDetaliObject.setText("Детальніше про об'єкт...");
+        buttonDetaliObject.setText("Р”РµС‚Р°Р»СЊРЅС–С€Рµ РїСЂРѕ РѕР±'С”РєС‚...");
         buttonDetaliObject.setName("buttonDetaliObject"); // NOI18N
 
-        buttonDetaliVlasnyka.setText("Детальніше про власника...");
+        buttonDetaliVlasnyka.setText("Р”РµС‚Р°Р»СЊРЅС–С€Рµ РїСЂРѕ РІР»Р°СЃРЅРёРєР°...");
         buttonDetaliVlasnyka.setName("buttonDetaliVlasnyka"); // NOI18N
 
-        buttonUklastyDohovir.setText("Укласти договір");
+        buttonUklastyDohovir.setText("РЈРєР»Р°СЃС‚Рё РґРѕРіРѕРІС–СЂ");
         buttonUklastyDohovir.setName("buttonUklastyDohovir"); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(panelRezultatyPoshuku);
@@ -178,13 +178,13 @@ public class SearchFrame extends javax.swing.JFrame {
 
         getContentPane().add(panelRezultatyPoshuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 400, 360));
 
-        buttonPoshuk.setText("Пошук");
+        buttonPoshuk.setText("РџРѕС€СѓРє");
         buttonPoshuk.setName("buttonPoshuk"); // NOI18N
         getContentPane().add(buttonPoshuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 180, 40));
 
         panelNazad.setName("panelNazad"); // NOI18N
 
-        buttonNazad.setText("Назад до головного меню");
+        buttonNazad.setText("РќР°Р·Р°Рґ РґРѕ РіРѕР»РѕРІРЅРѕРіРѕ РјРµРЅСЋ");
         buttonNazad.setName("buttonNazad"); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(panelNazad);
@@ -206,7 +206,7 @@ public class SearchFrame extends javax.swing.JFrame {
 
         getContentPane().add(panelNazad, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 366, 610, 40));
 
-        panelMaxPlata.setBorder(javax.swing.BorderFactory.createTitledBorder("Максимальна плата"));
+        panelMaxPlata.setBorder(javax.swing.BorderFactory.createTitledBorder("РњР°РєСЃРёРјР°Р»СЊРЅР° РїР»Р°С‚Р°"));
 
         textfieldMaxPlata.setName("textfieldMaxPlata"); // NOI18N
 
@@ -229,11 +229,11 @@ public class SearchFrame extends javax.swing.JFrame {
 
         getContentPane().add(panelMaxPlata, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 143, 200, 60));
 
-        panelAdresa.setBorder(javax.swing.BorderFactory.createTitledBorder("Адреса"));
+        panelAdresa.setBorder(javax.swing.BorderFactory.createTitledBorder("РђРґСЂРµСЃР°"));
 
         textfieldVulytsia.setName("textfieldVulytsia"); // NOI18N
 
-        labelVulytsia.setText("Вулиця");
+        labelVulytsia.setText("Р’СѓР»РёС†СЏ");
         labelVulytsia.setName("labelVulytsia"); // NOI18N
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(panelAdresa);

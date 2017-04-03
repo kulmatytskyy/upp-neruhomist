@@ -39,25 +39,25 @@ public class EmployeeDetailsFrame extends javax.swing.JFrame {
         buttonVidhylyty = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Деталі про співробітника №37");
+        setTitle("Р”РµС‚Р°Р»С– РїСЂРѕ СЃРїС–РІСЂРѕР±С–С‚РЅРёРєР° в„–37");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelSpivrobitnyk.setBorder(javax.swing.BorderFactory.createTitledBorder("Співробітник"));
+        panelSpivrobitnyk.setBorder(javax.swing.BorderFactory.createTitledBorder("РЎРїС–РІСЂРѕР±С–С‚РЅРёРє"));
         panelSpivrobitnyk.setName("panelSpivrobitnyk"); // NOI18N
 
-        labelSpivrobitnyk.setText("Джейк Джиллєнхол");
+        labelSpivrobitnyk.setText("Р”Р¶РµР№Рє Р”Р¶РёР»Р»С”РЅС…РѕР»");
         labelSpivrobitnyk.setName("labelSpivrobitnyk"); // NOI18N
 
-        labelTelefon.setText("Телефон");
+        labelTelefon.setText("РўРµР»РµС„РѕРЅ");
         labelTelefon.setName("labelTelefon"); // NOI18N
 
-        labelPosada.setText("Посада");
+        labelPosada.setText("РџРѕСЃР°РґР°");
         labelPosada.setName("labelPosada"); // NOI18N
 
         labelTelefon_value.setText("0449379992");
         labelTelefon_value.setName("labelTelefon_value"); // NOI18N
 
-        labelPosada_value.setText("молодший черговий інженер");
+        labelPosada_value.setText("РјРѕР»РѕРґС€РёР№ С‡РµСЂРіРѕРІРёР№ С–РЅР¶РµРЅРµСЂ");
         labelPosada_value.setName("labelPosada_value"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(panelSpivrobitnyk);
@@ -95,18 +95,18 @@ public class EmployeeDetailsFrame extends javax.swing.JFrame {
 
         getContentPane().add(panelSpivrobitnyk, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 3, 400, 90));
 
-        panelDohovory.setBorder(javax.swing.BorderFactory.createTitledBorder("Договори"));
+        panelDohovory.setBorder(javax.swing.BorderFactory.createTitledBorder("Р”РѕРіРѕРІРѕСЂРё"));
         panelDohovory.setName("panelDohovory"); // NOI18N
 
         tableDohovory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Дубенська вулиця, 35", "активний"},
-                {"Дундича Олеко проспект, 22", "неактивний"},
-                {"Князя Романа вулиця, 7", "активний"},
-                {"Соборна вулиця, 151", "активний"}
+                {"Р”СѓР±РµРЅСЃСЊРєР° РІСѓР»РёС†СЏ, 35", "Р°РєС‚РёРІРЅРёР№"},
+                {"Р”СѓРЅРґРёС‡Р° РћР»РµРєРѕ РїСЂРѕСЃРїРµРєС‚, 22", "РЅРµР°РєС‚РёРІРЅРёР№"},
+                {"РљРЅСЏР·СЏ Р РѕРјР°РЅР° РІСѓР»РёС†СЏ, 7", "Р°РєС‚РёРІРЅРёР№"},
+                {"РЎРѕР±РѕСЂРЅР° РІСѓР»РёС†СЏ, 151", "Р°РєС‚РёРІРЅРёР№"}
             },
             new String [] {
-                "Клієнт", "Стан"
+                "РљР»С–С”РЅС‚", "РЎС‚Р°РЅ"
             }
         ) {
             Class[] types = new Class [] {
@@ -123,10 +123,10 @@ public class EmployeeDetailsFrame extends javax.swing.JFrame {
             tableDohovory.getColumnModel().getColumn(0).setPreferredWidth(200);
         }
 
-        buttonDetailsDohovir.setText("Детальніше про договір...");
+        buttonDetailsDohovir.setText("Р”РµС‚Р°Р»СЊРЅС–С€Рµ РїСЂРѕ РґРѕРіРѕРІС–СЂ...");
         buttonDetailsDohovir.setName("buttonDetailsDohovir"); // NOI18N
 
-        buttonDetailsObject.setText("Детальніше про об'єкт...");
+        buttonDetailsObject.setText("Р”РµС‚Р°Р»СЊРЅС–С€Рµ РїСЂРѕ РѕР±'С”РєС‚...");
         buttonDetailsObject.setName("buttonDetailsObject"); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(panelDohovory);
@@ -161,7 +161,7 @@ public class EmployeeDetailsFrame extends javax.swing.JFrame {
 
         panelButtonOK.setName("panelButtonOK"); // NOI18N
 
-        buttonOK.setText("ОК");
+        buttonOK.setText("РћРљ");
         buttonOK.setName("buttonOK"); // NOI18N
         buttonOK.setPreferredSize(null);
         buttonOK.addActionListener(new java.awt.event.ActionListener() {
@@ -190,7 +190,7 @@ public class EmployeeDetailsFrame extends javax.swing.JFrame {
 
         panelButtonVidhylyty.setName("panelButtonVidhylyty"); // NOI18N
 
-        buttonVidhylyty.setText("Відхилити");
+        buttonVidhylyty.setText("Р’С–РґС…РёР»РёС‚Рё");
         buttonVidhylyty.setToolTipText("");
         buttonVidhylyty.setName("buttonVidhylyty"); // NOI18N
         buttonVidhylyty.setPreferredSize(null);

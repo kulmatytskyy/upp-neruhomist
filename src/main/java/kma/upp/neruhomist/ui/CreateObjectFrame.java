@@ -56,26 +56,26 @@ public class CreateObjectFrame extends JFrame {
         buttonVidhylyty = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Додати об'єкт");
+        setTitle("Р”РѕРґР°С‚Рё РѕР±'С”РєС‚");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelAdresa.setBorder(javax.swing.BorderFactory.createTitledBorder("Адреса"));
+        panelAdresa.setBorder(javax.swing.BorderFactory.createTitledBorder("РђРґСЂРµСЃР°"));
         panelAdresa.setName("panelAdresa"); // NOI18N
 
-        labelVulytsia.setText("Вулиця");
+        labelVulytsia.setText("Р’СѓР»РёС†СЏ");
         labelVulytsia.setName("labelVulytsia"); // NOI18N
 
         textfieldVulytsia.setName("textfieldVulytsia"); // NOI18N
 
         textfieldBudynok.setName("textfieldBudynok"); // NOI18N
 
-        labelBudynok.setText("Будинок");
+        labelBudynok.setText("Р‘СѓРґРёРЅРѕРє");
         labelBudynok.setName("labelBudynok"); // NOI18N
 
         textfileldKvartyra.setName("textfileldKvartyra"); // NOI18N
 
-        labelKvartyra.setText("Квартира");
+        labelKvartyra.setText("РљРІР°СЂС‚РёСЂР°");
         labelKvartyra.setName("labelKvartyra"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(panelAdresa);
@@ -114,16 +114,16 @@ public class CreateObjectFrame extends JFrame {
 
         getContentPane().add(panelAdresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 60));
 
-        panelTypPrymischennya.setBorder(javax.swing.BorderFactory.createTitledBorder("Тип приміщення"));
+        panelTypPrymischennya.setBorder(javax.swing.BorderFactory.createTitledBorder("РўРёРї РїСЂРёРјС–С‰РµРЅРЅСЏ"));
         panelTypPrymischennya.setName("panelTypPrymischennya"); // NOI18N
 
         buttonGroup1.add(radiobuttonNezhytlovy);
-        radiobuttonNezhytlovy.setText("Нежитловий");
+        radiobuttonNezhytlovy.setText("РќРµР¶РёС‚Р»РѕРІРёР№");
         radiobuttonNezhytlovy.setName("radiobuttonNezhytlovy"); // NOI18N
 
         buttonGroup1.add(radiobuttonZhytlovy);
         radiobuttonZhytlovy.setSelected(true);
-        radiobuttonZhytlovy.setText("Житловий");
+        radiobuttonZhytlovy.setText("Р–РёС‚Р»РѕРІРёР№");
         radiobuttonZhytlovy.setMinimumSize(new java.awt.Dimension(89, 23));
         radiobuttonZhytlovy.setName("radiobuttonZhytlovy"); // NOI18N
 
@@ -149,7 +149,7 @@ public class CreateObjectFrame extends JFrame {
 
         getContentPane().add(panelTypPrymischennya, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 220, 60));
 
-        panelKillistKimnat.setBorder(javax.swing.BorderFactory.createTitledBorder("Кількість кімнат"));
+        panelKillistKimnat.setBorder(javax.swing.BorderFactory.createTitledBorder("РљС–Р»СЊРєС–СЃС‚СЊ РєС–РјРЅР°С‚"));
         panelKillistKimnat.setName("panelKillistKimnat"); // NOI18N
 
         dropdownKilkistKimnat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item1", "Item2", "Item3", "Item4" }));
@@ -173,7 +173,7 @@ public class CreateObjectFrame extends JFrame {
 
         getContentPane().add(panelKillistKimnat, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 150, 60));
 
-        panelPlata.setBorder(javax.swing.BorderFactory.createTitledBorder("Плата"));
+        panelPlata.setBorder(javax.swing.BorderFactory.createTitledBorder("РџР»Р°С‚Р°"));
         panelPlata.setName("panelPlata"); // NOI18N
 
         textfieldPlata.setName("textfieldPlata"); // NOI18N
@@ -201,7 +201,7 @@ public class CreateObjectFrame extends JFrame {
 
         panelButtonOK.setName("panelButtonOK"); // NOI18N
 
-        buttonOK.setText("ОК");
+        buttonOK.setText("РћРљ");
         buttonOK.setName("buttonOK"); // NOI18N
         buttonOK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -227,7 +227,7 @@ public class CreateObjectFrame extends JFrame {
 
         panelButtonVidhylyty.setName("panelButtonVidhylyty"); // NOI18N
 
-        buttonVidhylyty.setText("Відхилити");
+        buttonVidhylyty.setText("Р’С–РґС…РёР»РёС‚Рё");
         buttonVidhylyty.setToolTipText("");
         buttonVidhylyty.setName("buttonVidhylyty"); // NOI18N
         buttonVidhylyty.addActionListener(new java.awt.event.ActionListener() {
