@@ -1,6 +1,7 @@
 package kma.upp.neruhomist.ui;
 
 import kma.upp.neruhomist.ui.util.DelayedInitJFrame;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -36,6 +37,9 @@ public class StatisticsFrame extends DelayedInitJFrame {
     private javax.swing.JLabel labelSerChasOrendovanyNeZhytlovy;
     private javax.swing.JPanel panelStatistics;
     private javax.swing.JPanel panelButton;
+
+    @Autowired
+    private MenuFrame menuFrame;
 
     @Override
     protected void initComponents() {
@@ -296,6 +300,14 @@ public class StatisticsFrame extends DelayedInitJFrame {
         getContentPane().add(panelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 550, 50));
 
         pack();
+
+        attachActionsToButtons();
     }
 
+    private void attachActionsToButtons() {
+        buttonNazad.addActionListener(actionEvent -> {
+           dispose();
+           menuFrame.setVisible(true);
+        });
+    }
 }

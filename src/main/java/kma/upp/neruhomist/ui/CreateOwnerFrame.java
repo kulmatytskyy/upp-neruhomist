@@ -1,6 +1,7 @@
 package kma.upp.neruhomist.ui;
 
 import kma.upp.neruhomist.ui.util.DelayedInitJFrame;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -31,6 +32,9 @@ public class CreateOwnerFrame extends DelayedInitJFrame {
     private javax.swing.JTextField textfieldYurydychnaTypBiznesu;
     private javax.swing.JTextField textfieldYurydychnaContactneImya;
     private javax.swing.JTextField textfieldYurydychnaNazva;
+
+    @Autowired
+    private MenuFrame menuFrame;
     
 	public CreateOwnerFrame() {
         initComponents();
@@ -284,7 +288,8 @@ public class CreateOwnerFrame extends DelayedInitJFrame {
         // TODO add your handling code here:
     }                                
 
-    private void VidhylytyButtonClicked(java.awt.event.ActionEvent evt) {                                        
-        // TODO add your handling code here:
-    } 
+    private void VidhylytyButtonClicked(java.awt.event.ActionEvent evt) {
+	    dispose();
+	    menuFrame.setVisible(true);
+    }
 }

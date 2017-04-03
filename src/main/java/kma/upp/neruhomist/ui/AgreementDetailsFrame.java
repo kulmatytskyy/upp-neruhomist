@@ -1,6 +1,7 @@
 package kma.upp.neruhomist.ui;
 
 import kma.upp.neruhomist.ui.util.DelayedInitJFrame;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -45,6 +46,9 @@ public class AgreementDetailsFrame extends DelayedInitJFrame {
     private javax.swing.JPanel panelButtonVidhylyty;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tableInspekcia;
+
+    @Autowired
+    private MenuFrame menuFrame;
 
     @Override
     protected void initComponents() {
@@ -482,8 +486,9 @@ public class AgreementDetailsFrame extends DelayedInitJFrame {
         // TODO add your handling code here:
     }                                        
 
-    private void jButton2VidhylytyButtonClicked(java.awt.event.ActionEvent evt) {                                                
-        // TODO add your handling code here:
-    }                                               
+    private void jButton2VidhylytyButtonClicked(java.awt.event.ActionEvent evt) {
+        dispose();
+        menuFrame.setVisible(true);
+    }
 
 }

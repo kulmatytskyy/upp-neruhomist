@@ -1,6 +1,7 @@
 package kma.upp.neruhomist.ui;
 
 import kma.upp.neruhomist.ui.util.DelayedInitJFrame;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -27,6 +28,9 @@ public class SearchFrame extends DelayedInitJFrame {
     private javax.swing.JTable tableResultaty;
     private javax.swing.JTextField textfieldMaxPlata;
     private javax.swing.JTextField textfieldVulytsia;
+
+    @Autowired
+    private MenuFrame menuFrame;
 
     @Override
     protected void initComponents() {
@@ -270,9 +274,19 @@ public class SearchFrame extends DelayedInitJFrame {
         getContentPane().add(panelAdresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 200, 70));
 
         pack();
+
+        attachActionsToButtons();
     }
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
+
+    private void attachActionsToButtons() {
+        buttonNazad.addActionListener(actionEvent -> {
+            dispose();
+            menuFrame.setVisible(true);
+        });
+    }
+
 }

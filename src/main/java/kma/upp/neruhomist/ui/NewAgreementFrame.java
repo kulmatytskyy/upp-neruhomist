@@ -1,6 +1,7 @@
 package kma.upp.neruhomist.ui;
 
 import kma.upp.neruhomist.ui.util.DelayedInitJFrame;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.swing.JFrame;
@@ -43,6 +44,9 @@ public class NewAgreementFrame extends DelayedInitJFrame {
     private javax.swing.JRadioButton radiobuttonSpivrobitnykIsnuuchyi;
     private javax.swing.JTextField labelClientTelefon_value;
     private javax.swing.JTextField labelSpivrobitnykTelefon_value;
+
+    @Autowired
+    private MenuFrame menuFrame;
 
     @Override
 	protected void initComponents() {
@@ -403,8 +407,9 @@ public class NewAgreementFrame extends DelayedInitJFrame {
         // TODO add your handling code here:
     }                                        
 
-    private void jButton7VidhylytyButtonClicked(java.awt.event.ActionEvent evt) {                                                
-        // TODO add your handling code here:
-    }   
+    private void jButton7VidhylytyButtonClicked(java.awt.event.ActionEvent evt) {
+        dispose();
+        menuFrame.setVisible(true);
+    }
 
 }

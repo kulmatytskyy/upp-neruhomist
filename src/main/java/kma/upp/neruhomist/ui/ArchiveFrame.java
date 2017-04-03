@@ -1,6 +1,7 @@
 package kma.upp.neruhomist.ui;
 
 import kma.upp.neruhomist.ui.util.DelayedInitJFrame;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -25,6 +26,9 @@ public class ArchiveFrame extends DelayedInitJFrame {
     private javax.swing.JRadioButton radiobuttonStanAny;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tableResultaty;
+
+    @Autowired
+    private MenuFrame menuFrame;
 
     @Override
     protected void initComponents() {
@@ -237,6 +241,16 @@ public class ArchiveFrame extends DelayedInitJFrame {
         getContentPane().add(panelNazad, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 720, -1));
 
         pack();
+
+        attachActionsToButtons();
     }
+
+    private void attachActionsToButtons() {
+        buttonNazad.addActionListener(actionEvent -> {
+            dispose();
+            menuFrame.setVisible(true);
+        });
+    }
+
 
 }
