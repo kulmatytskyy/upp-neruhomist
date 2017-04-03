@@ -16,6 +16,7 @@ public class Inspection {
 
     @Id
     @Column(name = "inspectionID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer getInspectionId() {
         return inspectionId;
     }

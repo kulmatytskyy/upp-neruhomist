@@ -22,6 +22,7 @@ public class Contract {
 
     @Id
     @Column(name = "contractID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer getContractId() {
         return contractId;
     }

@@ -22,6 +22,7 @@ public class Client {
 
     @Id
     @Column(name = "clientID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer getClientId() {
         return clientId;
     }

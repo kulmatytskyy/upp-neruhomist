@@ -16,6 +16,7 @@ public class Review {
 
     @Id
     @Column(name = "reviewID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer getReviewId() {
         return reviewId;
     }
