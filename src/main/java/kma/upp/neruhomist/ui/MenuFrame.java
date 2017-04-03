@@ -1,17 +1,13 @@
 package kma.upp.neruhomist.ui;
 
-import com.google.common.collect.ImmutableMap;
+import kma.upp.neruhomist.ui.util.DelayedInitJFrame;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
-import javax.swing.*;
 import java.awt.*;
-import java.util.HashMap;
-import java.util.Map;
 
 @Component
-public class MenuFrame extends javax.swing.JFrame {
+public class MenuFrame extends DelayedInitJFrame {
 
     private javax.swing.JButton buttonDodatyObject;
     private javax.swing.JButton buttonDodatyVlasnyka;
@@ -47,12 +43,8 @@ public class MenuFrame extends javax.swing.JFrame {
     @Autowired
     private StatisticsFrame statisticsFrame;
 
-
-    public MenuFrame() {
-        initComponents();
-    }
-
-    private void initComponents() {
+    @Override
+    protected void initComponents() {
 
         panelDodaty = new javax.swing.JPanel();
         buttonDodatyObject = new javax.swing.JButton();
@@ -197,6 +189,7 @@ public class MenuFrame extends javax.swing.JFrame {
         getContentPane().add(panelVyhid, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 360, 50));
 
         attachEventsToButtons();
+
         pack();
 
     }

@@ -1,11 +1,12 @@
 package kma.upp.neruhomist.ui;
 
+import kma.upp.neruhomist.ui.util.DelayedInitJFrame;
 import org.springframework.stereotype.Component;
 
 import javax.swing.JFrame;
 
 @Component
-public class NewAgreementFrame extends JFrame {
+public class NewAgreementFrame extends DelayedInitJFrame {
 
 	private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
@@ -42,12 +43,9 @@ public class NewAgreementFrame extends JFrame {
     private javax.swing.JRadioButton radiobuttonSpivrobitnykIsnuuchyi;
     private javax.swing.JTextField labelClientTelefon_value;
     private javax.swing.JTextField labelSpivrobitnykTelefon_value;
-    
-	public NewAgreementFrame() {
-        initComponents();
-    }
-	
-	private void initComponents() {
+
+    @Override
+	protected void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();

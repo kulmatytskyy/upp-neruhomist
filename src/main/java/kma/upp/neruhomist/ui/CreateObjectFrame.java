@@ -1,16 +1,19 @@
 package kma.upp.neruhomist.ui;
 
+import kma.upp.neruhomist.repository.ObjectRepository;
+import kma.upp.neruhomist.ui.util.DelayedInitJFrame;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.swing.JFrame;
+import javax.swing.*;
 
 @Component
-public class CreateObjectFrame extends JFrame {
+public class CreateObjectFrame extends DelayedInitJFrame {
 	
 	private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton buttonOK;
     private javax.swing.JButton buttonVidhylyty;
-    private javax.swing.JComboBox<String> dropdownKilkistKimnat;
+    private JComboBox<Integer> dropdownKilkistKimnat;
     private javax.swing.JLabel labelVulytsia;
     private javax.swing.JLabel labelBudynok;
     private javax.swing.JLabel labelKvartyra;
@@ -27,12 +30,12 @@ public class CreateObjectFrame extends JFrame {
     private javax.swing.JTextField textfieldBudynok;
     private javax.swing.JTextField textfileldKvartyra;
     private javax.swing.JTextField textfieldPlata;
-    
-	public CreateObjectFrame() {
-        initComponents();
-    }
-	
-	private void initComponents() {
+
+    @Autowired
+    private ObjectRepository objectRepository;
+
+    @Override
+	protected void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         panelAdresa = new javax.swing.JPanel();
@@ -46,7 +49,7 @@ public class CreateObjectFrame extends JFrame {
         radiobuttonNezhytlovy = new javax.swing.JRadioButton();
         radiobuttonZhytlovy = new javax.swing.JRadioButton();
         panelKillistKimnat = new javax.swing.JPanel();
-        dropdownKilkistKimnat = new javax.swing.JComboBox<>();
+        dropdownKilkistKimnat = new javax.swing.JComboBox<Integer>();
         panelPlata = new javax.swing.JPanel();
         textfieldPlata = new javax.swing.JTextField();
         panelButtons = new javax.swing.JPanel();
@@ -152,7 +155,8 @@ public class CreateObjectFrame extends JFrame {
         panelKillistKimnat.setBorder(javax.swing.BorderFactory.createTitledBorder("Кількість кімнат"));
         panelKillistKimnat.setName("panelKillistKimnat"); // NOI18N
 
-        dropdownKilkistKimnat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item1", "Item2", "Item3", "Item4" }));
+        dropdownKilkistKimnat.setModel(new javax.swing.DefaultComboBoxModel<Integer>((Integer[]) objectRepository.getAllRoomsNum().toArray()));
+
         dropdownKilkistKimnat.setName("dropdownKilkistKimnat"); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(panelKillistKimnat);

@@ -1,11 +1,10 @@
 package kma.upp.neruhomist.ui;
 
+import kma.upp.neruhomist.ui.util.DelayedInitJFrame;
 import org.springframework.stereotype.Component;
 
-import javax.swing.JFrame;
-
 @Component
-public class CreateEmployeeFrame extends JFrame {
+public class CreateEmployeeFrame extends DelayedInitJFrame {
 	
 	private javax.swing.JButton buttonOK;
     private javax.swing.JButton buttonVidhylyty;
@@ -24,12 +23,9 @@ public class CreateEmployeeFrame extends JFrame {
     private javax.swing.JTextField textfieldPrizvysche;
     private javax.swing.JTextField textfieldTelefonOne;
     private javax.swing.JTextField textfieldTelefonTwo;
-    
-	public CreateEmployeeFrame() {
-        initComponents();
-    }
-	
-	private void initComponents() {
+
+    @Override
+	protected void initComponents() {
 
         panelImya = new javax.swing.JPanel();
         textfieldPoBatkovi = new javax.swing.JTextField();

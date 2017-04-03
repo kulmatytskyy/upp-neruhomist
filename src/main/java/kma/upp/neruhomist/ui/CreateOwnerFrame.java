@@ -1,11 +1,10 @@
 package kma.upp.neruhomist.ui;
 
+import kma.upp.neruhomist.ui.util.DelayedInitJFrame;
 import org.springframework.stereotype.Component;
 
-import javax.swing.JFrame;
-
 @Component
-public class CreateOwnerFrame extends JFrame {
+public class CreateOwnerFrame extends DelayedInitJFrame {
 	
 	private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
@@ -36,8 +35,9 @@ public class CreateOwnerFrame extends JFrame {
 	public CreateOwnerFrame() {
         initComponents();
     }
-	
-	private void initComponents() {
+
+    @Override
+	protected void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
