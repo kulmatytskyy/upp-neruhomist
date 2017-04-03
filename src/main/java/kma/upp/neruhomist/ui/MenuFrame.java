@@ -1,10 +1,13 @@
 package kma.upp.neruhomist.ui;
 
+import com.google.common.collect.ImmutableMap;
 import kma.upp.neruhomist.ui.util.DelayedInitJFrame;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.swing.*;
 import java.awt.*;
+import java.util.Map;
 
 @Component
 public class MenuFrame extends DelayedInitJFrame {
@@ -195,13 +198,22 @@ public class MenuFrame extends DelayedInitJFrame {
     }
 
     private void attachEventsToButtons() {
-        buttonArchive.addActionListener(actionEvent -> {dispose(); EventQueue.invokeLater(() -> archiveFrame.setVisible(true));});
-        buttonStatystyka.addActionListener(actionEvent -> {dispose(); EventQueue.invokeLater(() -> statisticsFrame.setVisible(true));});
-        buttonDodatyClienta.addActionListener(actionEvent -> {dispose(); EventQueue.invokeLater(() -> createClientFrame.setVisible(true));});
-        buttonDodatyObject.addActionListener(actionEvent -> {dispose(); EventQueue.invokeLater(() -> createObjectFrame.setVisible(true));});
-        buttonDodatySpivrobitnyka.addActionListener(actionEvent -> {dispose(); EventQueue.invokeLater(() -> createEmployeeFrame.setVisible(true));});
-        buttonDodatyVlasnyka.addActionListener(actionEvent -> {dispose(); EventQueue.invokeLater(() -> createOwnerFrame.setVisible(true));});
-        buttonPoshuk.addActionListener(actionEvent -> {dispose(); EventQueue.invokeLater(() -> searchFrame.setVisible(true));});
+
+        final Map<JButton, JFrame> buttonFrameMap = ImmutableMap.<JButton, JFrame>builder()
+                .put(buttonArchive, archiveFrame)
+                .put(buttonDodatyClienta, createClientFrame)
+                .put(buttonDodatyObject, createObjectFrame)
+                .put(buttonDodatySpivrobitnyka, createEmployeeFrame)
+                .put(buttonDodatyVlasnyka, createOwnerFrame)
+                .put(buttonPoshuk, searchFrame)
+                .put(buttonStatystyka, statisticsFrame)
+                .build();
+
+        buttonFrameMap.forEach((button, frame) -> button.addActionListener(actionEvent -> {
+            dispose();
+            EventQueue.invokeLater(() -> searchFrame.setVisible(true));
+        }));
+
         buttonVyhid.addActionListener(actionEvent -> dispose());
     }
 }

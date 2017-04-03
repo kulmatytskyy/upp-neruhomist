@@ -155,7 +155,7 @@ public class CreateObjectFrame extends DelayedInitJFrame {
         panelKillistKimnat.setBorder(javax.swing.BorderFactory.createTitledBorder("Кількість кімнат"));
         panelKillistKimnat.setName("panelKillistKimnat"); // NOI18N
 
-        dropdownKilkistKimnat.setModel(new javax.swing.DefaultComboBoxModel<Integer>((Integer[]) objectRepository.getAllRoomsNum().toArray()));
+        dropdownKilkistKimnat.setModel(new javax.swing.DefaultComboBoxModel(objectRepository.allRoomsNum().toArray()));
 
         dropdownKilkistKimnat.setName("dropdownKilkistKimnat"); // NOI18N
 
