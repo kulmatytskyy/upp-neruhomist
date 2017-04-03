@@ -19,6 +19,7 @@
         <mysql-connector-version>6.0.6</mysql-connector-version>
         <datafactory-version>0.8</datafactory-version>
         <netbeans-external-version>RELEASE802</netbeans-external-version>
+        <google-collection-version>1.0</google-collection-version>
     </properties>
 
     <build>
@@ -88,7 +89,11 @@
             <artifactId>AbsoluteLayout</artifactId>
             <version>${netbeans-external-version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.google.collections</groupId>
+            <artifactId>google-collections</artifactId>
+            <version>${google-collection-version}</version>
+        </dependency>
     </dependencies>
 
 </project>
