@@ -3,6 +3,12 @@ package kma.upp.neruhomist.ui;
 import kma.upp.neruhomist.ui.util.DelayedInitJFrame;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 @Component
 public class OwnerDetailsFrame extends DelayedInitJFrame {
@@ -26,9 +32,14 @@ public class OwnerDetailsFrame extends DelayedInitJFrame {
     private javax.swing.JPanel panelButtonVidhylyty;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tableObjects;
-
+    
+    public OwnerDetailsFrame() {
+		initComponents();
+	}
+    
     @Autowired
     private MenuFrame menuFrame;
+    private JButton button;
 
     @Override
     protected void initComponents() {
@@ -165,25 +176,34 @@ public class OwnerDetailsFrame extends DelayedInitJFrame {
 
         buttonDetailsObject.setText("Детальніше про об'єкт...");
         buttonDetailsObject.setName("buttonDetailsObject"); // NOI18N
+        
+        button = new JButton();
+        button.setText("Додати новий об'єкт...");
+        button.setName("buttonDetailsObject");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(panelObjects);
-        panelObjects.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
-                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
-                                        .addComponent(buttonDetailsObject, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(0, 8, Short.MAX_VALUE))
+        	jPanel2Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(jPanel2Layout.createSequentialGroup()
+        			.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        					.addComponent(buttonDetailsObject, GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+        					.addGap(18)
+        					.addComponent(button, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE))
+        				.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 380, GroupLayout.PREFERRED_SIZE))
+        			.addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
-                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(buttonDetailsObject)
-                                .addGap(0, 6, Short.MAX_VALUE))
+        	jPanel2Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(jPanel2Layout.createSequentialGroup()
+        			.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 107, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(buttonDetailsObject)
+        				.addComponent(button))
+        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+        panelObjects.setLayout(jPanel2Layout);
 
         getContentPane().add(panelObjects, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 400, 170));
 

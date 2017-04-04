@@ -1,8 +1,12 @@
 package kma.upp.neruhomist.ui;
 
+import kma.upp.neruhomist.model.Client;
+import kma.upp.neruhomist.repository.ClientRepository;
 import kma.upp.neruhomist.ui.util.DelayedInitJFrame;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.math.BigDecimal;
 
 @Component
 public class CreateClientFrame extends DelayedInitJFrame {
@@ -40,6 +44,9 @@ public class CreateClientFrame extends DelayedInitJFrame {
 
     @Autowired
     private MenuFrame menuFrame;
+
+    @Autowired
+    private ClientRepository clientRepository;
 
     @Override
 	protected void initComponents() {
@@ -349,9 +356,15 @@ public class CreateClientFrame extends DelayedInitJFrame {
         pack();
     }
 
-	private void OKButtonClicked(java.awt.event.ActionEvent evt) {                                 
-        // TODO add your handling code here:
-    }                                
+	private void OKButtonClicked(java.awt.event.ActionEvent evt) {
+        Client client = new Client();
+        client.setSurname(textfieldYurydychnaPrizvysche.getText());
+        client.setPhone(textfieldTelefonOne.getText() + textfieldTelefonTwo.getText());
+        client.setType(radiobuttonZhytlovy.isSelected() ? "living" : "non-living");
+        client.setMaximumPayment(new BigDecimal(textfieldMaxPlata.getText()));
+
+        clientRepository.save(client);
+    }
 
     private void VidhylytyButtonClicked(java.awt.event.ActionEvent evt) {
         dispose();

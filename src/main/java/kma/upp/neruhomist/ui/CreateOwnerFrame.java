@@ -1,5 +1,7 @@
 package kma.upp.neruhomist.ui;
 
+import kma.upp.neruhomist.model.Owner;
+import kma.upp.neruhomist.repository.OwnerRepository;
 import kma.upp.neruhomist.ui.util.DelayedInitJFrame;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -35,10 +37,9 @@ public class CreateOwnerFrame extends DelayedInitJFrame {
 
     @Autowired
     private MenuFrame menuFrame;
-    
-	public CreateOwnerFrame() {
-        initComponents();
-    }
+
+    @Autowired
+    private OwnerRepository ownerRepository;
 
     @Override
 	protected void initComponents() {
@@ -284,9 +285,20 @@ public class CreateOwnerFrame extends DelayedInitJFrame {
         pack();
     }
 	
-	private void OKButtonClicked(java.awt.event.ActionEvent evt) {                                 
-        // TODO add your handling code here:
-    }                                
+	private void OKButtonClicked(java.awt.event.ActionEvent evt) {
+        Owner owner = new Owner();
+        owner.setPhone(textfieldTelefonOne.getText() + textfieldTelefonTwo.getText());
+        boolean isPhysicalPerson = radiobuttonFizychna.isSelected();
+        owner.setName(isPhysicalPerson
+                ? String.format("%s %s %s", textfieldYurydychnaPrizvysche.getText(), textfieldYurydychnaImya.getText(), textfieldYurydychnaPoBatkovi.getText())
+                : textfieldYurydychnaNazva.getText());
+        if(!isPhysicalPerson) {
+           owner.setBusinessType(textfieldYurydychnaTypBiznesu.getText());
+           owner.setContactName(textfieldYurydychnaContactneImya.getText());
+        }
+
+        ownerRepository.save(owner);
+    }
 
     private void VidhylytyButtonClicked(java.awt.event.ActionEvent evt) {
 	    dispose();

@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 import javax.swing.*;
 import java.awt.*;
 import java.util.Map;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 @Component
 public class MenuFrame extends DelayedInitJFrame {
@@ -46,25 +48,42 @@ public class MenuFrame extends DelayedInitJFrame {
     @Autowired
     private StatisticsFrame statisticsFrame;
 
+    @Autowired
+    private ListClientsFrame listClientsFrame;
+
+    @Autowired
+    private ListEmployeesFrame listEmployeesFrame;
+
+    @Autowired
+    private ListOwnersFrame listOwnersFrame;
+
+    private JButton ownersListButton;
+    private JButton clientsListButton;
+    private JButton workersListButton;
+
     @Override
     protected void initComponents() {
 
         panelDodaty = new javax.swing.JPanel();
+        panelDodaty.setBounds(0, 0, 190, 180);
         buttonDodatyObject = new javax.swing.JButton();
         buttonDodatyVlasnyka = new javax.swing.JButton();
         buttonDodatyClienta = new javax.swing.JButton();
         buttonDodatySpivrobitnyka = new javax.swing.JButton();
         panelPerehlyanuty = new javax.swing.JPanel();
+        panelPerehlyanuty.setBounds(190, 0, 170, 252);
         buttonStatystyka = new javax.swing.JButton();
         buttonArchive = new javax.swing.JButton();
         panelPoshuk = new javax.swing.JPanel();
+        panelPoshuk.setBounds(0, 182, 190, 70);
         buttonPoshuk = new javax.swing.JButton();
         panelVyhid = new javax.swing.JPanel();
+        panelVyhid.setBounds(10, 263, 343, 50);
         buttonVyhid = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Головне меню");
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(null);
 
         panelDodaty.setBorder(javax.swing.BorderFactory.createTitledBorder("Додати"));
         panelDodaty.setName("panelDodaty"); // NOI18N
@@ -108,7 +127,7 @@ public class MenuFrame extends DelayedInitJFrame {
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
-        getContentPane().add(panelDodaty, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 180));
+        getContentPane().add(panelDodaty);
 
         panelPerehlyanuty.setBorder(javax.swing.BorderFactory.createTitledBorder("Переглянути"));
         panelPerehlyanuty.setName("panelPerehlyanuty"); // NOI18N
@@ -118,29 +137,50 @@ public class MenuFrame extends DelayedInitJFrame {
 
         buttonArchive.setText("Архів");
         buttonArchive.setName("buttonArchive"); // NOI18N
+        
+        ownersListButton = new JButton();
+        ownersListButton.setText("Список власників");
+        ownersListButton.setName("buttonDodatyVlasnyka");
+        
+        clientsListButton = new JButton();
+        clientsListButton.setText("Список клієнтів");
+        clientsListButton.setName("buttonDodatyClienta");
+        
+        workersListButton = new JButton();
+        workersListButton.setText("Список співробітників");
+        workersListButton.setName("buttonDodatySpivrobitnyka");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(panelPerehlyanuty);
-        panelPerehlyanuty.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buttonStatystyka, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
-                    .addComponent(buttonArchive, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+        	jPanel2Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(jPanel2Layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+        				.addComponent(buttonStatystyka, GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+        				.addComponent(buttonArchive, GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+        				.addComponent(workersListButton, GroupLayout.PREFERRED_SIZE, 143, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(clientsListButton, GroupLayout.PREFERRED_SIZE, 143, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(ownersListButton, GroupLayout.PREFERRED_SIZE, 143, GroupLayout.PREFERRED_SIZE))
+        			.addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(buttonStatystyka)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buttonArchive)
-                .addContainerGap(19, Short.MAX_VALUE))
+        	jPanel2Layout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(jPanel2Layout.createSequentialGroup()
+        			.addGap(13)
+        			.addComponent(ownersListButton)
+        			.addGap(18)
+        			.addComponent(clientsListButton)
+        			.addGap(18)
+        			.addComponent(workersListButton)
+        			.addPreferredGap(ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+        			.addComponent(buttonStatystyka)
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addComponent(buttonArchive)
+        			.addContainerGap())
         );
+        panelPerehlyanuty.setLayout(jPanel2Layout);
 
-        getContentPane().add(panelPerehlyanuty, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 170, 110));
+        getContentPane().add(panelPerehlyanuty);
 
         panelPoshuk.setBorder(javax.swing.BorderFactory.createTitledBorder("Пошук"));
         panelPoshuk.setName("panelPoshuk"); // NOI18N
@@ -165,7 +205,7 @@ public class MenuFrame extends DelayedInitJFrame {
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
-        getContentPane().add(panelPoshuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 170, 70));
+        getContentPane().add(panelPoshuk);
 
         panelVyhid.setName("pPanelVyhid"); // NOI18N
 
@@ -189,7 +229,7 @@ public class MenuFrame extends DelayedInitJFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(panelVyhid, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 360, 50));
+        getContentPane().add(panelVyhid);
 
         attachActionsToButtons();
 
@@ -207,6 +247,9 @@ public class MenuFrame extends DelayedInitJFrame {
                 .put(buttonDodatyVlasnyka, createOwnerFrame)
                 .put(buttonPoshuk, searchFrame)
                 .put(buttonStatystyka, statisticsFrame)
+                .put(clientsListButton, listClientsFrame)
+                .put(workersListButton, listEmployeesFrame)
+                .put(ownersListButton, listOwnersFrame)
                 .build();
 
         buttonFrameMap.forEach((button, frame) -> button.addActionListener(actionEvent -> {

@@ -1,5 +1,7 @@
 package kma.upp.neruhomist.ui;
 
+import kma.upp.neruhomist.model.Worker;
+import kma.upp.neruhomist.repository.WorkerRepository;
 import kma.upp.neruhomist.ui.util.DelayedInitJFrame;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -27,6 +29,9 @@ public class CreateEmployeeFrame extends DelayedInitJFrame {
 
     @Autowired
     private MenuFrame menuFrame;
+
+    @Autowired
+    private WorkerRepository workerRepository;
 
     @Override
 	protected void initComponents() {
@@ -242,9 +247,14 @@ public class CreateEmployeeFrame extends DelayedInitJFrame {
         pack();
     }
 	
-	private void jButton1OKButtonClicked(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
-    }                                        
+	private void jButton1OKButtonClicked(java.awt.event.ActionEvent evt) {
+        Worker worker = new Worker();
+        worker.setSurname(textfieldPrizvysche.getText());
+        worker.setPosition(textfieldPosada.getText());
+        worker.setPhone(textfieldTelefonOne.getText() + textfieldTelefonTwo.getText());
+
+        workerRepository.save(worker);
+    }
 
     private void jButton2VidhylytyButtonClicked(java.awt.event.ActionEvent evt) {
         dispose();
