@@ -30,6 +30,15 @@ public class ArchiveFrame extends DelayedInitJFrame {
     @Autowired
     private MenuFrame menuFrame;
 
+    @Autowired
+    private ObjectDetailsFrame objectDetailsFrame;
+
+    @Autowired
+    private OwnerDetailsFrame ownerDetailsFrame;
+
+    @Autowired
+    private AgreementDetailsFrame agreementDetailsFrame;
+
     @Override
     protected void initComponents() {
 
@@ -249,6 +258,21 @@ public class ArchiveFrame extends DelayedInitJFrame {
         buttonNazad.addActionListener(actionEvent -> {
             dispose();
             menuFrame.setVisible(true);
+        });
+
+        buttonDetaliDohovoru.addActionListener(actionEvent -> {
+            dispose();
+            agreementDetailsFrame.setVisible(true);
+        });
+
+        buttonDetaliObject.addActionListener(actionEvent -> {
+            dispose();
+            objectDetailsFrame.setVisible(true);
+        });
+
+        buttonDetaliVlasnyka.addActionListener(actionEvent -> {
+            dispose();
+            ownerDetailsFrame.setVisible(true);
         });
     }
 

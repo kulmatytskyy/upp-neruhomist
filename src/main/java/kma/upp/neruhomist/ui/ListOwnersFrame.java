@@ -1,6 +1,7 @@
 package kma.upp.neruhomist.ui;
 
 import kma.upp.neruhomist.ui.util.DelayedInitJFrame;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.swing.*;
@@ -20,6 +21,9 @@ public class ListOwnersFrame extends DelayedInitJFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private JButton searchButton;
+
+    @Autowired
+    private OwnerDetailsFrame ownerDetailsFrame;
 
     @Override
 	protected void initComponents() {
@@ -158,6 +162,11 @@ public class ListOwnersFrame extends DelayedInitJFrame {
 
     private void attachActionsToButtons() {
         backButton.addActionListener(backToMenu);
+
+        moreAboutOwnerButton.addActionListener(actionEvent -> {
+            dispose();
+            ownerDetailsFrame.setVisible(true);
+        });
     }
 
 }

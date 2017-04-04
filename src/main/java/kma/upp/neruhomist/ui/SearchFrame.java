@@ -32,6 +32,12 @@ public class SearchFrame extends DelayedInitJFrame {
     @Autowired
     private MenuFrame menuFrame;
 
+    @Autowired
+    private ObjectDetailsFrame objectDetailsFrame;
+
+    @Autowired
+    private OwnerDetailsFrame ownerDetailsFrame;
+
     @Override
     protected void initComponents() {
 
@@ -286,6 +292,20 @@ public class SearchFrame extends DelayedInitJFrame {
         buttonNazad.addActionListener(actionEvent -> {
             dispose();
             menuFrame.setVisible(true);
+        });
+
+        buttonDetaliObject.addActionListener(actionEvent -> {
+            dispose();
+            objectDetailsFrame.setVisible(true);
+        });
+
+        buttonDetaliVlasnyka.addActionListener(actionEvent -> {
+            dispose();
+            ownerDetailsFrame.setVisible(true);
+        });
+
+        buttonUklastyDohovir.addActionListener(actionEvent -> {
+
         });
     }
 

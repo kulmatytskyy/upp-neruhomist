@@ -1,8 +1,10 @@
 package kma.upp.neruhomist.ui;
 
+import kma.upp.neruhomist.model.Client;
 import kma.upp.neruhomist.repository.ClientRepository;
 import kma.upp.neruhomist.ui.util.ClientTableModel;
 import kma.upp.neruhomist.ui.util.DelayedInitJFrame;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -29,6 +31,12 @@ public class ListClientsFrame extends DelayedInitJFrame {
 
     private ClientTableModel tableModel;
 
+    @Autowired
+    private ClientDetailsFrame clientDetailsFrame;
+
+    @Autowired
+    private Client client;
+
     @Override
 	protected void initComponents() {
 
@@ -54,6 +62,7 @@ public class ListClientsFrame extends DelayedInitJFrame {
 
         tableModel = new ClientTableModel(clientRepository.findAll());
         clientsTable.setModel(tableModel);
+        clientsTable.removeColumn(clientsTable.getColumnModel().getColumn(0));
         clientsTable.setName("tableOwners"); // NOI18N
         clientsTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         tableScrollPane.setViewportView(clientsTable);
@@ -153,6 +162,12 @@ public class ListClientsFrame extends DelayedInitJFrame {
         searchButton.addActionListener(actionEvent -> {
             tableModel.setClients(clientRepository.findByPhoneStartingWith(phoneToSearchField.getText()));
             tableModel.fireTableDataChanged();
+        });
+        moreAboutClientButton.addActionListener(actionEvent -> {
+            BeanUtils.copyProperties(clientRepository.findOne((Integer)tableModel.getValueAt(clientsTable.getSelectedRow(), 0)), client);
+            System.out.println(client);
+            dispose();
+            clientDetailsFrame.setVisible(true);
         });
     }
 

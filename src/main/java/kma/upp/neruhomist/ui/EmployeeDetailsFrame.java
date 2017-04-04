@@ -27,6 +27,12 @@ public class EmployeeDetailsFrame extends DelayedInitJFrame {
     @Autowired
     private MenuFrame menuFrame;
 
+    @Autowired
+    private AgreementDetailsFrame agreementDetailsFrame;
+
+    @Autowired
+    private ObjectDetailsFrame objectDetailsFrame;
+
     @Override
     protected void initComponents() {
 
@@ -230,6 +236,20 @@ public class EmployeeDetailsFrame extends DelayedInitJFrame {
         getContentPane().add(panelButtons, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 400, 40));
 
         pack();
+
+        assignActionsToButtons();
+    }
+
+    private void assignActionsToButtons() {
+        buttonDetailsDohovir.addActionListener(actionEvent -> {
+            dispose();
+            agreementDetailsFrame.setVisible(true);
+        });
+
+        buttonDetailsObject.addActionListener(actionEvent -> {
+            dispose();
+            objectDetailsFrame.setVisible(true);
+        });
     }
 
     private void jButton1OKButtonClicked(java.awt.event.ActionEvent evt) {                                         

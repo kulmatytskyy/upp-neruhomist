@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ClientTableModel extends AbstractTableModel {
 
-    private static final String[] HEADERS = new String[]{"Клієнт", "Тип особи", "Телефон"};
+    private static final String[] HEADERS = new String[]{"id", "Клієнт", "Тип особи", "Телефон"};
 
     private List<Client> clients;
 
@@ -26,15 +26,16 @@ public class ClientTableModel extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 3;
+        return 4;
     }
 
     @Override
     public Object getValueAt(int row, int column) {
         switch (column) {
-            case 0: return clients.get(row).getSurname();
-            case 1: return clients.get(row).getType();
-            case 2: return clients.get(row).getPhone();
+            case 0: return clients.get(row).getClientId();
+            case 1: return clients.get(row).getSurname();
+            case 2: return clients.get(row).getType();
+            case 3: return clients.get(row).getPhone();
             default:return null;
         }
     }

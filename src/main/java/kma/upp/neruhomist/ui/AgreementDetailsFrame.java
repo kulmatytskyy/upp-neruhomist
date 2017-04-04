@@ -50,6 +50,21 @@ public class AgreementDetailsFrame extends DelayedInitJFrame {
     @Autowired
     private MenuFrame menuFrame;
 
+    @Autowired
+    private ObjectDetailsFrame objectDetailsFrame;
+
+    @Autowired
+    private EmployeeDetailsFrame employeeDetailsFrame;
+
+    @Autowired
+    private ClientDetailsFrame clientDetailsFrame;
+
+    @Autowired
+    private AgreementDetailsFrame agreementDetailsFrame;
+
+    @Autowired
+    private InspectionDetailsFrame inspectionDetailsFrame;
+
     @Override
     protected void initComponents() {
 
@@ -480,6 +495,35 @@ public class AgreementDetailsFrame extends DelayedInitJFrame {
         getContentPane().add(panelInspekcii, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 530, 150));
 
         pack();
+
+        assignActionsToButtons();
+    }
+
+    private void assignActionsToButtons() {
+        buttonDeatilsClient.addActionListener(actionEvent -> {
+            dispose();
+            clientDetailsFrame.setVisible(true);
+        });
+
+        buttonDeatilsDohovir.addActionListener(actionEvent -> {
+            dispose();
+            agreementDetailsFrame.setVisible(true);
+        });
+
+        buttonDeatilsObject.addActionListener(actionEvent -> {
+            dispose();
+            objectDetailsFrame.setVisible(true);
+        });
+
+        buttonDeatilsSpivrobitnyk.addActionListener(actionEvent -> {
+            dispose();
+            employeeDetailsFrame.setVisible(true);
+        });
+
+        buttonDetailsInspekcia.addActionListener(actionEvent -> {
+            dispose();
+            inspectionDetailsFrame.setVisible(true);
+        });
     }
 
     private void jButton1OKButtonClicked(java.awt.event.ActionEvent evt) {                                         

@@ -7,8 +7,6 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 @Component
 public class OwnerDetailsFrame extends DelayedInitJFrame {
@@ -32,14 +30,20 @@ public class OwnerDetailsFrame extends DelayedInitJFrame {
     private javax.swing.JPanel panelButtonVidhylyty;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tableObjects;
-    
+    private JButton createNewObjectButton;
+
     public OwnerDetailsFrame() {
 		initComponents();
 	}
     
     @Autowired
     private MenuFrame menuFrame;
-    private JButton button;
+
+    @Autowired
+    private ObjectDetailsFrame objectDetailsFrame;
+
+    @Autowired
+    private CreateObjectFrame createObjectFrame;
 
     @Override
     protected void initComponents() {
@@ -177,9 +181,9 @@ public class OwnerDetailsFrame extends DelayedInitJFrame {
         buttonDetailsObject.setText("Детальніше про об'єкт...");
         buttonDetailsObject.setName("buttonDetailsObject"); // NOI18N
         
-        button = new JButton();
-        button.setText("Додати новий об'єкт...");
-        button.setName("buttonDetailsObject");
+        createNewObjectButton = new JButton();
+        createNewObjectButton.setText("Додати новий об'єкт...");
+        createNewObjectButton.setName("buttonDetailsObject");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(panelObjects);
         jPanel2Layout.setHorizontalGroup(
@@ -189,7 +193,7 @@ public class OwnerDetailsFrame extends DelayedInitJFrame {
         				.addGroup(Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
         					.addComponent(buttonDetailsObject, GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
         					.addGap(18)
-        					.addComponent(button, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE))
+        					.addComponent(createNewObjectButton, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE))
         				.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 380, GroupLayout.PREFERRED_SIZE))
         			.addContainerGap())
         );
@@ -200,7 +204,7 @@ public class OwnerDetailsFrame extends DelayedInitJFrame {
         			.addPreferredGap(ComponentPlacement.UNRELATED)
         			.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
         				.addComponent(buttonDetailsObject)
-        				.addComponent(button))
+        				.addComponent(createNewObjectButton))
         			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelObjects.setLayout(jPanel2Layout);
@@ -273,6 +277,20 @@ public class OwnerDetailsFrame extends DelayedInitJFrame {
         getContentPane().add(panelButtons, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 400, 40));
 
         pack();
+
+        assingActionsToButtons();
+    }
+
+    private void assingActionsToButtons() {
+        buttonDetailsObject.addActionListener(actionEvent -> {
+            dispose();
+            objectDetailsFrame.setVisible(true);
+        });
+
+        createNewObjectButton.addActionListener(actionEvent -> {
+            dispose();
+            createNewObjectButton.setVisible(true);
+        });
     }
 
     private void jButton1OKButtonClicked(java.awt.event.ActionEvent evt) {

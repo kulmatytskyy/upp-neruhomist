@@ -41,6 +41,9 @@ public class StatisticsFrame extends DelayedInitJFrame {
     @Autowired
     private MenuFrame menuFrame;
 
+    @Autowired
+    private SearchFrame searchFrame;
+
     @Override
     protected void initComponents() {
 
@@ -308,6 +311,21 @@ public class StatisticsFrame extends DelayedInitJFrame {
         buttonNazad.addActionListener(actionEvent -> {
            dispose();
            menuFrame.setVisible(true);
+        });
+
+        buttonNeZhytlovyhPerehlyanutySpysok.addActionListener(actionEvent -> {
+            dispose();
+            searchFrame.setVisible(true);
+        });
+
+        buttonUsogoPrymischenPerehlyanutySpysok.addActionListener(actionEvent -> {
+            dispose();
+            searchFrame.setVisible(true);
+        });
+
+        buttonZhytlovyhPerehlyanutySpysok.addActionListener(actionEvent -> {
+            dispose();
+            searchFrame.setVisible(true);
         });
     }
 }

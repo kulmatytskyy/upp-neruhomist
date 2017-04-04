@@ -48,6 +48,21 @@ public class NewAgreementFrame extends DelayedInitJFrame {
     @Autowired
     private MenuFrame menuFrame;
 
+    @Autowired
+    private ClientDetailsFrame clientDetailsFrame;
+
+    @Autowired
+    private CreateClientFrame createClientFrame;
+
+    @Autowired
+    private EmployeeDetailsFrame employeeDetailsFrame;
+
+    @Autowired
+    private CreateEmployeeFrame createEmployeeFrame;
+
+    @Autowired
+    private ObjectDetailsFrame objectDetailsFrame;
+
     @Override
 	protected void initComponents() {
 
@@ -401,9 +416,38 @@ public class NewAgreementFrame extends DelayedInitJFrame {
         getContentPane().add(panelButtons, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 480, 40));
 
         pack();
+
+        assigActionsToButtons();
     }
-	
-	private void jButton6OKButtonClicked(java.awt.event.ActionEvent evt) {                                         
+
+    private void assigActionsToButtons() {
+        buttonDetailsClient.addActionListener(actionEvent -> {
+            dispose();
+            clientDetailsFrame.setVisible(true);
+        });
+
+        buttonDetailsObject.addActionListener(actionEvent -> {
+            dispose();
+            objectDetailsFrame.setVisible(true);
+        });
+
+        buttonDetailsSpivrobitnyk.addActionListener(actionEvent -> {
+            dispose();
+            employeeDetailsFrame.setVisible(true);
+        });
+
+        buttonNovyClient.addActionListener(actionEvent -> {
+            dispose();
+            createClientFrame.setVisible(true);
+        });
+
+        buttonNovySpivrobitnyk.addActionListener(actionEvent -> {
+            dispose();
+            createEmployeeFrame.setVisible(true);
+        });
+    }
+
+    private void jButton6OKButtonClicked(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }                                        
 

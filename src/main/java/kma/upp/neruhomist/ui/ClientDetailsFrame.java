@@ -1,8 +1,15 @@
 package kma.upp.neruhomist.ui;
 
+import kma.upp.neruhomist.model.Client;
+import kma.upp.neruhomist.model.Contract;
+import kma.upp.neruhomist.repository.ContractRepository;
+import kma.upp.neruhomist.ui.util.ContractsTableModel;
 import kma.upp.neruhomist.ui.util.DelayedInitJFrame;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import javax.swing.*;
+import java.util.ArrayList;
 
 @Component
 public class ClientDetailsFrame extends DelayedInitJFrame {
@@ -31,6 +38,20 @@ public class ClientDetailsFrame extends DelayedInitJFrame {
     @Autowired
     private MenuFrame menuFrame;
 
+    @Autowired
+    private AgreementDetailsFrame agreementDetailsFrame;
+
+    @Autowired
+    private ObjectDetailsFrame objectDetailsFrame;
+
+    @Autowired
+    private Client client;
+
+    @Autowired
+    private ContractRepository contractRepository;
+
+    private ContractsTableModel tableModel;
+
     @Override
     protected void initComponents() {
 
@@ -56,13 +77,13 @@ public class ClientDetailsFrame extends DelayedInitJFrame {
         buttonVidhylyty = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Деталі про клієнта №14");
+        setTitle(String.format("Деталі про клієнта №%d", client.getClientId()));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelClient.setBorder(javax.swing.BorderFactory.createTitledBorder("Клієнт"));
         panelClient.setName("panelClient"); // NOI18N
 
-        labelClient.setText("Глибовець Андрій Миколайович");
+        labelClient.setText(client.getSurname());
         labelClient.setName("labelClient"); // NOI18N
 
         labelTelefon.setText("Телефон");
@@ -77,16 +98,16 @@ public class ClientDetailsFrame extends DelayedInitJFrame {
         labelMaxPlata.setText("Максимальна плата");
         labelMaxPlata.setName("labelMaxPlata"); // NOI18N
 
-        labelTelefon_value.setText("0449379992");
+        labelTelefon_value.setText(client.getPhone());
         labelTelefon_value.setName("labelTelefon_value"); // NOI18N
 
-        labelTypOsoby_value.setText("фізична");
+        labelTypOsoby_value.setText(client.getType());
         labelTypOsoby_value.setName("labelTypOsoby_value"); // NOI18N
 
-        labelTypPrymischennya_value.setText("житловий");
+        labelTypPrymischennya_value.setText(client.getType());
         labelTypPrymischennya_value.setName("labelTypPrymischennya_value"); // NOI18N
 
-        labelMaxPlata_value.setText("6600");
+        labelMaxPlata_value.setText(client.getMaximumPayment().toString());
         labelMaxPlata_value.setToolTipText("");
         labelMaxPlata_value.setName("labelMaxPlata_value"); // NOI18N
 
@@ -140,25 +161,10 @@ public class ClientDetailsFrame extends DelayedInitJFrame {
         panelDohovory.setBorder(javax.swing.BorderFactory.createTitledBorder("Договори"));
         panelDohovory.setName("panelDohovory"); // NOI18N
 
-        tableDohovory.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Дубенська вулиця, 35", "активний"},
-                {"Дундича Олеко проспект, 22", "неактивний"},
-                {"Князя Романа вулиця, 7", "активний"},
-                {"Соборна вулиця, 151", "активний"}
-            },
-            new String [] {
-                "Клієнт", "Стан"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
+        tableModel = new ContractsTableModel(contractRepository.findByClient(client));
+        tableDohovory.setModel(tableModel);
+        tableDohovory.removeColumn(tableDohovory.getColumnModel().getColumn(0));
+        tableDohovory.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         tableDohovory.setName("tableDohovory"); // NOI18N
         jScrollPane1.setViewportView(tableDohovory);
         if (tableDohovory.getColumnModel().getColumnCount() > 0) {
@@ -263,6 +269,20 @@ public class ClientDetailsFrame extends DelayedInitJFrame {
         getContentPane().add(panelButtons, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 400, 40));
 
         pack();
+
+        attachActionToButtons();
+    }
+
+    private void attachActionToButtons() {
+        buttonDetailsDohovir.addActionListener(actionEvent -> {
+            dispose();
+            agreementDetailsFrame.setVisible(true);
+        });
+
+        buttonDetailsObject.addActionListener(actionEvent -> {
+            dispose();
+            objectDetailsFrame.setVisible(true);
+        });
     }
 
     private void jButton1OKButtonClicked(java.awt.event.ActionEvent evt) {

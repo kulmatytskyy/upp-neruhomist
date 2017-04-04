@@ -39,6 +39,15 @@ public class ObjectDetailsFrame extends DelayedInitJFrame {
     @Autowired
     private MenuFrame menuFrame;
 
+    @Autowired
+    private AgreementDetailsFrame agreementDetailsFrame;
+
+    @Autowired
+    private OwnerDetailsFrame ownerDetailsFrame;
+
+    @Autowired
+    private ClientDetailsFrame clientDetailsFrame;
+
     @Override
     protected void initComponents() {
 
@@ -345,6 +354,25 @@ public class ObjectDetailsFrame extends DelayedInitJFrame {
         getContentPane().add(panelVlasnyk, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 400, 100));
 
         pack();
+
+        assignActionsToButtons();
+    }
+
+    private void assignActionsToButtons() {
+        buttonDetailsClient.addActionListener(actionEvent -> {
+            dispose();
+            clientDetailsFrame.setVisible(true);
+        });
+
+        buttonDetailsDohovir.addActionListener(actionEvent -> {
+            dispose();
+            agreementDetailsFrame.setVisible(true);
+        });
+
+        buttonDetailsVlasnyk.addActionListener(actionEvent -> {
+            dispose();
+            ownerDetailsFrame.setVisible(true);
+        });
     }
 
     private void jButton1OKButtonClicked(java.awt.event.ActionEvent evt) {
