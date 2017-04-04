@@ -1,12 +1,14 @@
 package kma.upp.neruhomist.model;
 
 import org.hibernate.annotations.Proxy;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.Collection;
 
+@Component
 @Entity(name = "clients")
 @Transactional
 @Proxy(lazy = false)

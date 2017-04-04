@@ -20,6 +20,7 @@
         <datafactory-version>0.8</datafactory-version>
         <netbeans-external-version>RELEASE802</netbeans-external-version>
         <google-collection-version>1.0</google-collection-version>
+        <apache-commons-beanutils-version>1.8.3</apache-commons-beanutils-version>
     </properties>
 
     <build>
@@ -93,6 +94,11 @@
             <groupId>com.google.collections</groupId>
             <artifactId>google-collections</artifactId>
             <version>${google-collection-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <!--<version>${apache-commons-beanutils-version}</version>-->
         </dependency>
     </dependencies>
 

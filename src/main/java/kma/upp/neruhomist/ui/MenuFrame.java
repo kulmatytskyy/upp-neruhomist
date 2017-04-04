@@ -234,6 +234,7 @@ public class MenuFrame extends DelayedInitJFrame {
         attachActionsToButtons();
 
         pack();
+        pack();
 
     }
 

@@ -29,7 +29,7 @@ public class Main {
     static long maxDay = LocalDate.of(2019, 12, 31).toEpochDay();
     static long today = LocalDate.of(2017, 3, 17).toEpochDay();
 	static List<String> businessTypeList = Arrays.asList("Restaurants", "Construction", "Lawyers", "Groceries", "Fast food", "Security", "Insurance");
-	static List<String> clientTypeList = Arrays.asList("Type one", "Type two", "Type three");
+	static List<String> clientTypeList = Arrays.asList("living", "non-living");
 	static List<String> positionList = Arrays.asList("Secretary", "Clerk", "Executive", "Junior Executive", "Secretary Assistant", "Assistant Assistant", "Junior Clerk");
 	public static void main(String[] args) throws IOException{
 		randomGenerator = new Random();
@@ -45,7 +45,7 @@ public class Main {
 		printObjects();
 	}
 	private static void printObjects() throws IOException {
-		PrintWriter writer = new PrintWriter("src/sql/fill-objects.sql", "UTF-8");
+		PrintWriter writer = new PrintWriter("src/main/sql/fill-objects.sql", "UTF-8");
 		for(int i = 0; i<objectList.size(); i++){
 			writer.println(objectList.get(i));
 		}
@@ -54,7 +54,7 @@ public class Main {
 		
 	}
 	private static void generateReviews() throws IOException {
-		PrintWriter writer = new PrintWriter("src/sql/fill-reviews.sql", "UTF-8");
+		PrintWriter writer = new PrintWriter("src/main/sql/fill-reviews.sql", "UTF-8");
 		for(int i = 0; i < objectList.size(); i++){
 			int reviewsPerObject = 2;
 			for(int k = 0; k<reviewsPerObject; k++){
@@ -83,7 +83,7 @@ public class Main {
 		writer.close();
 	}
 	private static void generateInspections() throws IOException {
-		PrintWriter writer = new PrintWriter("src/sql/fill-inspections.sql", "UTF-8");
+		PrintWriter writer = new PrintWriter("src/main/sql/fill-inspections.sql", "UTF-8");
 		for(int i = 0; i < contractList.size(); i++){
 		
 		int inspectionsPerContract = df.getNumberBetween(1, 5);
@@ -110,7 +110,7 @@ public class Main {
 		writer.close();
 	}
 	private static void generateContracts() throws IOException {
-		PrintWriter writer = new PrintWriter("src/sql/fill-contracts.sql", "UTF-8");
+		PrintWriter writer = new PrintWriter("src/main/sql/fill-contracts.sql", "UTF-8");
 		for (int i = 0; i < 2000; i++) {
 			Contract contract = new Contract();
 			long minDate = minDay;
@@ -182,7 +182,7 @@ public class Main {
 		//writer.close();
 	}
 	private static void generateOwners() throws IOException {
-		PrintWriter writer = new PrintWriter("src/sql/fill-owners.sql", "UTF-8");
+		PrintWriter writer = new PrintWriter("src/main/sql/fill-owners.sql", "UTF-8");
 		for (int i = 0; i < 1000; i++) {
 			Owner owner = new Owner();
 			String phone = df.getNumberText(12);
@@ -214,7 +214,7 @@ public class Main {
 		writer.close();
 	}
 	private static void generateClients() throws IOException {
-		PrintWriter writer = new PrintWriter("src/sql/fill-clients.sql", "UTF-8");
+		PrintWriter writer = new PrintWriter("src/main/sql/fill-clients.sql", "UTF-8");
 		for (int i = 0; i < 1000; i++) {          
             String name = df.getLastName();
             int index = randomGenerator.nextInt
@@ -234,7 +234,7 @@ public class Main {
 		writer.close();
 	}
 	private static void generateWorkers() throws IOException {
-		PrintWriter writer = new PrintWriter("src/sql/fill-workers.sql", "UTF-8");
+		PrintWriter writer = new PrintWriter("src/main/sql/fill-workers.sql", "UTF-8");
 		for (int i = 0; i < 1000; i++) {          
             String name = df.getLastName();
             int index = randomGenerator.nextInt
